@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沖縄県立高校入試の読解問題を読む | JUKEN CAMP</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1e1a14;--paper:#faf8f2;--paper2:#ede8db;--card:#fff;
+  --ocean:#1a5f7a;--coral:#c25a3a;--sun:#c69a20;--jade:#3a7a58;--grape:#6a4a8a;
+  --shadow:rgba(30,26,20,.08)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Zen Kaku Gothic New',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh}
+
+/* ── スプラッシュ ── */
+.splash{position:fixed;inset:0;background:linear-gradient(160deg,#d4eaf4,#faf7ee,#cfe8d8);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10000;transition:opacity .8s,transform .8s}
+.splash.h{opacity:0;transform:scale(1.03);pointer-events:none}
+.sp-pref{font-size:.65rem;font-weight:700;letter-spacing:.5em;color:var(--ocean);animation:rv 1.2s ease-out forwards;opacity:0;text-align:center;margin-bottom:.5rem}
+.sp1{font-family:'Zen Old Mincho',serif;font-size:clamp(1.4rem,4vw,2.5rem);color:var(--ink);letter-spacing:.12em;animation:rv 1.5s ease-out .3s forwards;opacity:0;text-align:center;line-height:1.7}
+.sp-accent{color:var(--ocean)}
+.sp2{font-family:'Shippori Mincho',serif;color:#7a9aaa;font-size:clamp(.62rem,1.5vw,.82rem);letter-spacing:.3em;margin-top:1rem;animation:rv 1.5s ease-out .6s forwards;opacity:0}
+.sp3{color:var(--sun);font-weight:900;font-size:.6rem;letter-spacing:.4em;margin-top:2rem;animation:rv 1.5s ease-out 1s forwards;opacity:0}
+.sp-badge{margin-top:1.5rem;animation:rv 1.5s ease-out .9s forwards;opacity:0;display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.sp-badge span{font-size:.58rem;font-weight:700;letter-spacing:.12em;padding:.25rem .75rem;border-radius:20px}
+.sp-badge .b1{background:rgba(194,90,58,.1);color:var(--coral)}
+.sp-badge .b2{background:rgba(26,95,122,.1);color:var(--ocean)}
+.sp-badge .b3{background:rgba(58,122,88,.1);color:var(--jade)}
+@keyframes rv{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:translateY(0)}}
+
+/* ── ヘッダー ── */
+header{background:#fff;padding:.7rem 1.2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 12px var(--shadow);border-bottom:1px solid rgba(0,0,0,.05)}
+.htl{font-family:'Zen Old Mincho',serif;color:var(--ink);font-size:.88rem;letter-spacing:.06em;cursor:pointer}
+.htl span{color:var(--ocean)}
+.hcamp{color:var(--sun);font-size:.5rem;font-weight:700;letter-spacing:.25em;margin-bottom:.1rem}
+.hsr input{background:var(--paper);border:1px solid var(--paper2);border-radius:8px;padding:.38rem .75rem;color:var(--ink);font-size:.75rem;width:148px;font-family:inherit;outline:none;transition:border .2s}
+.hsr input:focus{border-color:var(--ocean)}
+.hsr input::placeholder{color:#bbb}
+
+/* ── メインリスト ── */
+.ml{max-width:900px;margin:0 auto;padding:1.5rem 1rem 5rem}
+.hero{text-align:center;margin-bottom:2rem;padding:2.5rem 0 2rem}
+.hero-eyebrow{font-size:.58rem;font-weight:700;letter-spacing:.4em;color:var(--ocean);margin-bottom:.8rem;opacity:.8}
+.hero h1{font-family:'Zen Old Mincho',serif;font-size:clamp(1.3rem,3.8vw,2rem);font-weight:900;line-height:1.6;margin-bottom:.8rem;color:var(--ink)}
+.hero p{font-size:.82rem;color:#8a7e72;line-height:2.1;max-width:600px;margin:0 auto}
+.hero-badges{display:flex;justify-content:center;gap:.6rem;margin-top:1.3rem;flex-wrap:wrap}
+.hb{font-size:.57rem;font-weight:700;letter-spacing:.1em;padding:.26rem .8rem;border-radius:20px}
+.hb.story{background:rgba(194,90,58,.08);color:var(--coral);border:1px solid rgba(194,90,58,.2)}
+.hb.essay{background:rgba(26,95,122,.08);color:var(--ocean);border:1px solid rgba(26,95,122,.2)}
+
+.year-filter{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.yb{font-size:.62rem;font-weight:700;letter-spacing:.08em;padding:.3rem .85rem;border-radius:20px;border:1.5px solid var(--paper2);background:var(--card);cursor:pointer;color:#aaa;transition:all .18s;font-family:inherit}
+.yb.a{background:var(--ocean);border-color:var(--ocean);color:#fff}
+
+.ct{display:flex;margin-bottom:1.2rem;background:var(--card);border-radius:10px;box-shadow:0 1px 8px var(--shadow);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.ct::-webkit-scrollbar{display:none}
+.ctb{flex:0 0 auto;padding:.62rem 1rem;cursor:pointer;border:none;background:transparent;font-family:inherit;font-size:.7rem;font-weight:700;color:#bbb;transition:all .2s;text-align:center;white-space:nowrap}
+.ctb.a{color:#fff;background:var(--ocean);border-radius:8px;margin:3px}
+.ctb[data-c=story].a{background:var(--coral)}
+.ctb[data-c=compass].a{background:var(--jade)}
+.ctb[data-c=theme].a{background:var(--coral)}
+
+.sg{display:grid;gap:.85rem}
+.sc{background:var(--card);border-radius:12px;padding:1.2rem 1.3rem;cursor:pointer;transition:all .22s;border-left:4px solid transparent;overflow:hidden;box-shadow:0 1px 6px var(--shadow)}
+.sc:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(30,26,20,.12)}
+.sc[data-c=story]{border-left-color:var(--coral)}
+.sc[data-c=essay]{border-left-color:var(--ocean)}
+.sct-meta{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin-bottom:.3rem}
+.scy{font-size:.55rem;font-weight:700;padding:.15rem .6rem;border-radius:10px;background:rgba(198,154,32,.12);color:var(--sun);letter-spacing:.05em}
+.sco{font-size:.55rem;padding:.15rem .6rem;border-radius:10px;font-weight:600;white-space:nowrap}
+.sc[data-c=story] .sco{background:rgba(194,90,58,.08);color:var(--coral)}
+.sc[data-c=essay] .sco{background:rgba(26,95,122,.08);color:var(--ocean)}
+.scn{font-family:'Zen Old Mincho',serif;font-size:1.06rem;font-weight:900;line-height:1.4;margin-bottom:.2rem}
+.sch{font-size:.72rem;color:#aaa;line-height:1.5;margin-top:.15rem}
+.sc-reason{font-size:.64rem;color:#999;margin-top:.5rem;padding-top:.5rem;border-top:1px dashed var(--paper2);line-height:1.65}
+.sc-reason strong{color:var(--ocean);font-weight:700}
+.sc[data-c=story] .sc-reason strong{color:var(--coral)}
+
+/* ══════════════════════════════════
+   現代のテーマページ
+══════════════════════════════════ */
+.theme-page{display:none;max-width:860px;margin:0 auto;padding:1.5rem 1rem 6rem}
+.theme-page.a{display:block}
+
+.theme-hero{text-align:center;padding:2.8rem 1rem 2.2rem;margin-bottom:2.5rem;position:relative}
+.theme-hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--coral),transparent)}
+.theme-hero-eyebrow{font-size:.58rem;font-weight:700;letter-spacing:.45em;color:var(--coral);margin-bottom:.9rem;opacity:.85}
+.theme-hero h1{font-family:'Zen Old Mincho',serif;font-size:clamp(1.4rem,4vw,2.1rem);font-weight:900;line-height:1.5;color:var(--ink);margin-bottom:.9rem}
+.theme-hero p{font-size:.84rem;color:#8a7e72;line-height:2.1;max-width:600px;margin:0 auto}
+.theme-hero-badge{display:inline-flex;align-items:center;gap:.35rem;margin-top:1.2rem;background:rgba(194,90,58,.08);border:1px solid rgba(194,90,58,.2);border-radius:20px;padding:.3rem 1rem;font-size:.58rem;font-weight:700;color:var(--coral);letter-spacing:.1em}
+
+/* テーマ群カード */
+.theme-sec{margin-bottom:3rem}
+.theme-sec-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;padding-bottom:.8rem;border-bottom:2px solid var(--paper2)}
+.theme-sec-icon{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.theme-sec-title{font-family:'Zen Old Mincho',serif;font-size:1.02rem;font-weight:900;color:var(--ink)}
+.theme-sec-sub{font-size:.62rem;color:#aaa;margin-top:.1rem;letter-spacing:.04em}
+
+/* テーマカード */
+.tc-grid{display:grid;gap:.85rem}
+.tc{background:var(--card);border-radius:14px;padding:1.3rem 1.5rem;box-shadow:0 2px 10px var(--shadow);border-left:4px solid transparent;cursor:default;transition:transform .2s,box-shadow .2s}
+.tc:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(30,26,20,.12)}
+.tc.hot{border-left-color:var(--coral)}
+.tc.warm{border-left-color:var(--ocean)}
+.tc.green{border-left-color:var(--jade)}
+.tc.grape{border-left-color:var(--grape)}
+.tc.sun{border-left-color:var(--sun)}
+
+.tc-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.55rem;flex-wrap:wrap}
+.tc-name{font-family:'Zen Old Mincho',serif;font-size:.98rem;font-weight:900;color:var(--ink)}
+.tc-badge{font-size:.52rem;font-weight:700;padding:.15rem .6rem;border-radius:10px;white-space:nowrap}
+.tc.hot .tc-badge{background:rgba(194,90,58,.1);color:var(--coral)}
+.tc.warm .tc-badge{background:rgba(26,95,122,.1);color:var(--ocean)}
+.tc.green .tc-badge{background:rgba(58,122,88,.1);color:var(--jade)}
+.tc.grape .tc-badge{background:rgba(106,74,138,.1);color:var(--grape)}
+.tc.sun .tc-badge{background:rgba(198,154,32,.1);color:var(--sun)}
+
+.tc-body{font-size:.82rem;line-height:2;color:#555;font-family:'Shippori Mincho',serif}
+.tc-next{font-size:.72rem;margin-top:.65rem;padding:.55rem .85rem;border-radius:8px;color:#555;line-height:1.75;font-family:'Zen Kaku Gothic New',sans-serif;background:rgba(198,154,32,.06);border-left:2px solid rgba(198,154,32,.3)}
+.tc-next strong{color:var(--sun);font-weight:700}
+.tc-past{font-size:.68rem;margin-top:.5rem;color:#aaa;font-family:'Zen Kaku Gothic New',sans-serif}
+.tc-past strong{color:#888;font-weight:700}
+
+/* 出たテーマ・出そうテーマのタグ雲 */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0 1.2rem}
+.ttag{font-size:.7rem;font-weight:700;padding:.3rem .9rem;border-radius:20px;border:1.5px solid var(--paper2);color:#888;background:var(--card);letter-spacing:.04em}
+.ttag.out{background:rgba(194,90,58,.07);border-color:rgba(194,90,58,.25);color:var(--coral)}
+.ttag.next{background:rgba(26,95,122,.07);border-color:rgba(26,95,122,.2);color:var(--ocean)}
+.ttag.both{background:rgba(106,74,138,.07);border-color:rgba(106,74,138,.2);color:var(--grape)}
+
+/* スコアバー */
+.freq-bar{display:flex;align-items:center;gap:.6rem;margin-top:.4rem}
+.freq-label{font-size:.62rem;color:#aaa;min-width:2.5rem;text-align:right}
+.freq-track{flex:1;height:5px;background:var(--paper2);border-radius:3px;overflow:hidden}
+.freq-fill{height:100%;border-radius:3px;transition:width .8s ease}
+.tc.hot .freq-fill{background:var(--coral)}
+.tc.warm .freq-fill{background:var(--ocean)}
+.tc.green .freq-fill{background:var(--jade)}
+.tc.grape .freq-fill{background:var(--grape)}
+.tc.sun .freq-fill{background:var(--sun)}
+
+/* intro吹き出し */
+.theme-intro-box{background:rgba(198,154,32,.05);border:1.5px solid rgba(198,154,32,.2);border-radius:14px;padding:1.4rem 1.6rem;margin-bottom:2rem}
+.theme-intro-box p{font-size:.84rem;line-height:2.1;color:#555;font-family:'Shippori Mincho',serif}
+.theme-intro-box p:not(:last-child){margin-bottom:.8em}
+
+@media(max-width:600px){
+.theme-page{padding:1rem .75rem 5rem}
+.tc{padding:1rem 1rem}
+}
+
+/* ── 読解ビュー ── */
+.rv{display:none;max-width:760px;margin:0 auto;padding:1.5rem 1rem 6rem}
+.rv.a{display:block}
+.bb{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;color:#aaa;cursor:pointer;padding:.5rem 0;margin-bottom:1rem;background:none;border:none;font-family:inherit;transition:color .2s}
+.bb:hover{color:var(--ink)}
+.rh{text-align:center;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--paper2)}
+.rh-year{font-size:.58rem;font-weight:700;letter-spacing:.3em;color:var(--sun);margin-bottom:.5rem}
+.rh h1{font-family:'Zen Old Mincho',serif;font-size:clamp(1.4rem,4.5vw,2.2rem);font-weight:900;line-height:1.4;margin-bottom:.3rem}
+.rh .rau{font-size:.82rem;color:#aaa;margin-top:.4rem}
+.rh-meta{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.8rem}
+.rh-cat{font-size:.58rem;padding:.2rem .7rem;border-radius:20px;font-weight:700}
+.rh-cat.story{background:rgba(194,90,58,.08);color:var(--coral)}
+.rh-cat.essay{background:rgba(26,95,122,.08);color:var(--ocean)}
+.stx{font-family:'Shippori Mincho',serif;font-size:.95rem;line-height:2.3;background:var(--card);padding:1.8rem;border-radius:12px;box-shadow:0 2px 12px var(--shadow);margin-bottom:2rem;position:relative}
+.stx::before{content:'あらすじ・出題概要';position:absolute;top:-10px;left:20px;background:var(--ocean);color:#fff;font-size:.5rem;padding:.2rem .8rem;border-radius:4px;letter-spacing:.15em;font-family:'Zen Kaku Gothic New',sans-serif}
+.stx.story::before{background:var(--coral)}
+.stx p{margin-bottom:.8em}
+.stx p:last-child{margin-bottom:0}
+.sec{margin-bottom:2.2rem}
+.sec-label{font-size:.55rem;font-weight:900;letter-spacing:.3em;margin-bottom:.9rem;padding-bottom:.35rem;display:inline-block}
+.sec-why .sec-label{color:var(--sun);border-bottom:2px solid rgba(198,154,32,.25)}
+.sec-why .sec-body{background:rgba(198,154,32,.04);padding:1.6rem 1.8rem;border-radius:12px;border-left:3px solid rgba(198,154,32,.3);font-family:'Shippori Mincho',serif;font-size:.94rem;line-height:2.3}
+.sec-why .sec-body p{margin-bottom:1.1em}
+.sec-why .sec-body p:last-child{margin-bottom:0}
+.test-box{border-radius:12px;padding:1.6rem 1.8rem;margin-top:.9rem;margin-bottom:2.2rem;position:relative;overflow:hidden}
+.test-box.essay-style{background:linear-gradient(135deg,rgba(26,95,122,.07),rgba(26,95,122,.02));border:1.5px solid rgba(26,95,122,.18)}
+.test-box.story-style{background:linear-gradient(135deg,rgba(194,90,58,.07),rgba(194,90,58,.02));border:1.5px solid rgba(194,90,58,.18)}
+.test-box-label{font-size:.55rem;font-weight:900;letter-spacing:.3em;margin-bottom:.9rem;padding-bottom:.35rem;display:inline-block}
+.essay-style-label{color:var(--ocean);border-bottom:2px solid rgba(26,95,122,.25)}
+.story-style-label{color:var(--coral);border-bottom:2px solid rgba(194,90,58,.25)}
+.test-item{margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid rgba(0,0,0,.06)}
+.test-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.test-item-q{font-family:'Zen Kaku Gothic New',sans-serif;font-size:.7rem;font-weight:700;margin-bottom:.5rem;color:#888;letter-spacing:.05em}
+.test-item-a{font-family:'Shippori Mincho',serif;font-size:.93rem;line-height:2;color:var(--ink);margin-bottom:.7rem}
+.test-item-why{font-size:.8rem;line-height:1.95;color:#666;background:rgba(0,0,0,.025);padding:.9rem 1.1rem;border-radius:8px;font-family:'Zen Kaku Gothic New',sans-serif}
+.test-item-why strong{color:var(--ocean);font-weight:700}
+.test-box.story-style .test-item-why strong{color:var(--coral)}
+.sec-key .sec-label{color:var(--ocean);border-bottom:2px solid rgba(26,95,122,.25)}
+.sec-key .sec-body{background:rgba(26,95,122,.04);padding:1.6rem 1.8rem;border-radius:12px;border-left:3px solid rgba(26,95,122,.22);font-family:'Shippori Mincho',serif;font-size:.94rem;line-height:2.3}
+.sec-key .sec-body p{margin-bottom:1.1em}
+.sec-key .sec-body p:last-child{margin-bottom:0}
+.rv[data-c=story] .sec-key .sec-label{color:var(--coral)}
+.rv[data-c=story] .sec-key .sec-body{background:rgba(194,90,58,.04);border-left-color:rgba(194,90,58,.22)}
+.tactics-box{background:rgba(106,74,138,.05);border:1.5px solid rgba(106,74,138,.2);border-radius:12px;padding:1.5rem 1.8rem;margin-top:.9rem;margin-bottom:2.2rem}
+.tactics-label{font-size:.55rem;font-weight:900;letter-spacing:.3em;color:var(--grape);margin-bottom:.9rem;padding-bottom:.35rem;display:inline-block;border-bottom:2px solid rgba(106,74,138,.25)}
+.tactics-item{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px dashed rgba(106,74,138,.15)}
+.tactics-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.tactics-type{font-size:.65rem;font-weight:700;color:var(--grape);margin-bottom:.4rem;letter-spacing:.08em}
+.tactics-body{font-size:.88rem;line-height:2;color:var(--ink);font-family:'Shippori Mincho',serif}
+.tactics-body strong{color:var(--grape);font-weight:700}
+.tactics-example{font-size:.78rem;background:rgba(106,74,138,.06);padding:.7rem 1rem;border-radius:6px;margin-top:.6rem;color:#555;line-height:1.85;font-family:'Zen Kaku Gothic New',sans-serif}
+.di{background:linear-gradient(135deg,#edf5f0,#e4eeea);border-radius:12px;padding:1.8rem;margin-bottom:2rem;position:relative;overflow:hidden;border:1px solid rgba(58,122,88,.15)}
+.di::before{content:'';position:absolute;top:0;right:0;width:160px;height:160px;background:radial-gradient(ellipse,rgba(58,122,88,.07),transparent 70%);pointer-events:none}
+.sec-deep-label{color:var(--jade);border-bottom:2px solid rgba(58,122,88,.25)}
+.di p{font-family:'Shippori Mincho',serif;font-size:.94rem;line-height:2.3;position:relative;margin-bottom:1.1em;color:var(--ink)}
+.di p:last-child{margin-bottom:0}
+.snv{display:flex;gap:.8rem;margin-top:2rem}
+.snv button{flex:1;padding:.85rem;background:var(--card);border:2px solid var(--paper2);border-radius:10px;cursor:pointer;font-family:inherit;font-size:.78rem;color:var(--ink);transition:all .2s;font-weight:600}
+.snv button:hover{border-color:var(--ocean);color:var(--ocean)}
+.snv button:disabled{opacity:.2;cursor:default;color:var(--ink);border-color:var(--paper2)}
+.quote-block{border-left:3px solid var(--sun);background:rgba(198,154,32,.05);padding:.9rem 1.2rem;border-radius:0 8px 8px 0;margin:1rem 0;font-family:'Shippori Mincho',serif;font-size:.9rem;line-height:2;color:var(--ink)}
+
+/* ══════════════════════════════════
+   羅針盤ページ
+══════════════════════════════════ */
+.compass-page{display:none;max-width:860px;margin:0 auto;padding:1.5rem 1rem 6rem}
+.compass-page.a{display:block}
+
+.compass-hero{text-align:center;padding:2.8rem 1rem 2.2rem;margin-bottom:2.5rem;position:relative}
+.compass-hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--jade),transparent)}
+.compass-eyebrow{font-size:.58rem;font-weight:700;letter-spacing:.45em;color:var(--jade);margin-bottom:.9rem;opacity:.85}
+.compass-hero h1{font-family:'Zen Old Mincho',serif;font-size:clamp(1.4rem,4vw,2.1rem);font-weight:900;line-height:1.5;color:var(--ink);margin-bottom:.9rem}
+.compass-hero p{font-size:.84rem;color:#8a7e72;line-height:2.1;max-width:580px;margin:0 auto}
+.compass-badge{display:inline-flex;align-items:center;gap:.35rem;margin-top:1.2rem;background:rgba(58,122,88,.08);border:1px solid rgba(58,122,88,.2);border-radius:20px;padding:.3rem 1rem;font-size:.58rem;font-weight:700;color:var(--jade);letter-spacing:.1em}
+
+/* セクションヘッダー */
+.c-sec{margin-bottom:3rem}
+.c-sec-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;padding-bottom:.8rem;border-bottom:2px solid var(--paper2)}
+.c-sec-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:900;flex-shrink:0;color:#fff}
+.c-sec-num.jade{background:var(--jade)}
+.c-sec-num.ocean{background:var(--ocean)}
+.c-sec-num.coral{background:var(--coral)}
+.c-sec-num.sun{background:var(--sun)}
+.c-sec-num.grape{background:var(--grape)}
+.c-sec-title{font-family:'Zen Old Mincho',serif;font-size:1.05rem;font-weight:900;color:var(--ink)}
+.c-sec-sub{font-size:.65rem;color:#aaa;margin-top:.1rem;letter-spacing:.05em}
+
+/* 3つの力カード */
+.three-powers{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem}
+@media(max-width:640px){.three-powers{grid-template-columns:1fr}}
+.power-card{background:var(--card);border-radius:14px;padding:1.4rem 1.2rem;box-shadow:0 2px 12px var(--shadow);position:relative;overflow:hidden;border-top:3px solid transparent}
+.power-card.p1{border-top-color:var(--coral)}
+.power-card.p2{border-top-color:var(--ocean)}
+.power-card.p3{border-top-color:var(--jade)}
+.power-n{font-size:.55rem;font-weight:700;letter-spacing:.2em;color:#ccc;margin-bottom:.5rem}
+.power-title{font-family:'Zen Old Mincho',serif;font-size:.98rem;font-weight:900;line-height:1.4;margin-bottom:.7rem;color:var(--ink)}
+.power-card.p1 .power-title{color:var(--coral)}
+.power-card.p2 .power-title{color:var(--ocean)}
+.power-card.p3 .power-title{color:var(--jade)}
+.power-body{font-size:.8rem;line-height:1.95;color:#666;font-family:'Shippori Mincho',serif}
+.power-example{font-size:.72rem;background:var(--paper);padding:.7rem .9rem;border-radius:8px;margin-top:.8rem;color:#888;line-height:1.8;border-left:2px solid var(--paper2)}
+
+/* 傾向カード */
+.trend-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:600px){.trend-grid{grid-template-columns:1fr}}
+.trend-card{background:var(--card);border-radius:14px;padding:1.4rem;box-shadow:0 2px 10px var(--shadow);position:relative}
+.trend-card.story-t{border-left:4px solid var(--coral)}
+.trend-card.essay-t{border-left:4px solid var(--ocean)}
+.trend-cat{font-size:.55rem;font-weight:700;letter-spacing:.15em;padding:.18rem .65rem;border-radius:10px;margin-bottom:.7rem;display:inline-block}
+.trend-card.story-t .trend-cat{background:rgba(194,90,58,.09);color:var(--coral)}
+.trend-card.essay-t .trend-cat{background:rgba(26,95,122,.09);color:var(--ocean)}
+.trend-title{font-family:'Zen Old Mincho',serif;font-size:.95rem;font-weight:900;margin-bottom:.8rem;line-height:1.4;color:var(--ink)}
+.trend-items{list-style:none}
+.trend-items li{font-size:.8rem;line-height:1.9;color:#666;padding-left:1.1rem;position:relative;font-family:'Shippori Mincho',serif}
+.trend-items li::before{content:'▸';position:absolute;left:0;color:#ccc;font-size:.6rem;top:.15rem}
+.trend-items li strong{font-weight:700;color:var(--ink)}
+
+/* 出題パターン一覧 */
+.pattern-list{display:grid;gap:.75rem}
+.pattern-item{background:var(--card);border-radius:12px;padding:1.2rem 1.4rem;box-shadow:0 1px 8px var(--shadow);display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
+.pattern-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.pattern-icon.a{background:rgba(194,90,58,.1)}
+.pattern-icon.b{background:rgba(26,95,122,.1)}
+.pattern-icon.c{background:rgba(58,122,88,.1)}
+.pattern-icon.d{background:rgba(106,74,138,.1)}
+.pattern-icon.e{background:rgba(198,154,32,.1)}
+.pattern-icon.f{background:rgba(194,90,58,.08);border:1.5px dashed rgba(194,90,58,.3)}
+.pattern-body{}
+.pattern-name{font-size:.82rem;font-weight:700;margin-bottom:.35rem;color:var(--ink)}
+.pattern-desc{font-size:.78rem;line-height:1.9;color:#777;font-family:'Shippori Mincho',serif}
+.pattern-hint{font-size:.7rem;margin-top:.5rem;background:var(--paper);padding:.55rem .8rem;border-radius:6px;color:#888;line-height:1.75;font-family:'Zen Kaku Gothic New',sans-serif}
+.pattern-hint strong{color:var(--grape);font-weight:700}
+
+/* テーマトレンド */
+.theme-cloud{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}
+.theme-tag{font-size:.72rem;font-weight:700;padding:.35rem 1rem;border-radius:20px;border:1.5px solid var(--paper2);color:#888;background:var(--card);letter-spacing:.05em;transition:all .2s}
+.theme-tag.hot{background:rgba(194,90,58,.06);border-color:rgba(194,90,58,.25);color:var(--coral)}
+.theme-tag.warm{background:rgba(26,95,122,.06);border-color:rgba(26,95,122,.2);color:var(--ocean)}
+.theme-tag.green{background:rgba(58,122,88,.06);border-color:rgba(58,122,88,.2);color:var(--jade)}
+
+/* テーマ解説カード */
+.theme-explain{background:var(--card);border-radius:14px;padding:1.4rem 1.6rem;box-shadow:0 2px 10px var(--shadow);margin-bottom:.85rem;border-left:4px solid var(--paper2)}
+.theme-explain.hot{border-left-color:var(--coral)}
+.theme-explain.warm{border-left-color:var(--ocean)}
+.theme-explain.green{border-left-color:var(--jade)}
+.te-top{display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem}
+.te-label{font-size:.82rem;font-weight:900;color:var(--ink);font-family:'Zen Old Mincho',serif}
+.te-tag{font-size:.55rem;font-weight:700;padding:.15rem .6rem;border-radius:10px}
+.theme-explain.hot .te-tag{background:rgba(194,90,58,.09);color:var(--coral)}
+.theme-explain.warm .te-tag{background:rgba(26,95,122,.09);color:var(--ocean)}
+.theme-explain.green .te-tag{background:rgba(58,122,88,.09);color:var(--jade)}
+.te-body{font-size:.82rem;line-height:2;color:#666;font-family:'Shippori Mincho',serif}
+.te-next{font-size:.72rem;margin-top:.7rem;padding:.6rem .9rem;border-radius:8px;color:#555;line-height:1.75;font-family:'Zen Kaku Gothic New',sans-serif;background:rgba(198,154,32,.06);border-left:2px solid rgba(198,154,32,.3)}
+.te-next strong{color:var(--sun);font-weight:700}
+
+/* 答え方テンプレ */
+.template-list{display:grid;gap:1rem}
+.tmpl{background:var(--card);border-radius:14px;padding:1.4rem 1.6rem;box-shadow:0 2px 10px var(--shadow)}
+.tmpl-q{font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--grape);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
+.tmpl-q::before{content:'Q';width:18px;height:18px;background:var(--grape);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.52rem;flex-shrink:0}
+.tmpl-bad{font-size:.78rem;background:rgba(200,50,50,.04);border:1px solid rgba(200,50,50,.15);border-radius:8px;padding:.7rem 1rem;margin-bottom:.5rem;color:#c44}
+.tmpl-bad::before{content:'✕ NG：';font-weight:700;margin-right:.3rem}
+.tmpl-good{font-size:.78rem;background:rgba(58,122,88,.05);border:1px solid rgba(58,122,88,.2);border-radius:8px;padding:.7rem 1rem;color:#3a7a58;line-height:1.85}
+.tmpl-good::before{content:'○ GOOD：';font-weight:700;margin-right:.3rem}
+.tmpl-note{font-size:.72rem;color:#999;margin-top:.6rem;line-height:1.75;font-family:'Shippori Mincho',serif}
+
+/* 受験生へのメッセージ */
+.message-box{background:linear-gradient(135deg,#1a5f7a,#2a7a5a);border-radius:18px;padding:2.5rem 2rem;color:#fff;text-align:center;position:relative;overflow:hidden;margin-top:1rem}
+.message-box::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:radial-gradient(ellipse,rgba(255,255,255,.08),transparent 70%);pointer-events:none}
+.message-box::after{content:'';position:absolute;bottom:-30px;left:-30px;width:150px;height:150px;background:radial-gradient(ellipse,rgba(255,255,255,.05),transparent 70%);pointer-events:none}
+.msg-label{font-size:.55rem;font-weight:700;letter-spacing:.35em;opacity:.7;margin-bottom:1.2rem}
+.msg-title{font-family:'Zen Old Mincho',serif;font-size:clamp(1.1rem,3.5vw,1.6rem);font-weight:900;line-height:1.6;margin-bottom:1.2rem}
+.msg-body{font-family:'Shippori Mincho',serif;font-size:.9rem;line-height:2.3;opacity:.88;max-width:540px;margin:0 auto 1.4rem}
+.msg-accent{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:.6rem 1.4rem;font-size:.75rem;font-weight:700;letter-spacing:.1em;margin-top:.5rem}
+
+/* 年度別ハイライト */
+.year-timeline{position:relative;padding-left:1.5rem}
+.year-timeline::before{content:'';position:absolute;left:.35rem;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--jade),transparent)}
+.yt-item{position:relative;margin-bottom:1.5rem}
+.yt-item::before{content:'';position:absolute;left:-1.18rem;top:.4rem;width:8px;height:8px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 2px var(--paper)}
+.yt-year{font-size:.62rem;font-weight:700;letter-spacing:.15em;color:var(--jade);margin-bottom:.35rem}
+.yt-content{background:var(--card);border-radius:10px;padding:1rem 1.2rem;box-shadow:0 1px 6px var(--shadow);font-size:.8rem;line-height:1.9;color:#666;font-family:'Shippori Mincho',serif}
+.yt-content strong{color:var(--ink);font-weight:700}
+
+/* セパレータ */
+.c-divider{border:none;border-top:1px dashed var(--paper2);margin:2.5rem 0}
+
+@media(max-width:600px){
+.stx,.di{padding:1.3rem 1rem;font-size:.88rem}
+.sec-why .sec-body,.sec-key .sec-body,.test-box,.tactics-box{padding:1rem .9rem}
+.hsr input{width:110px;font-size:.72rem}
+.ctb{font-size:.63rem;padding:.52rem .4rem}
+.year-filter{gap:.3rem}
+.three-powers{grid-template-columns:1fr}
+.trend-grid{grid-template-columns:1fr}
+.message-box{padding:1.8rem 1.2rem}
+.compass-page{padding:1rem .75rem 5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="splash" id="sp">
+  <div class="sp-pref">沖縄県立高校入試</div>
+  <div class="sp1">読解問題を<span class="sp-accent">読む</span></div>
+  <div class="sp2">—— 解かなくても、問題の本質がわかる ——</div>
+  <div class="sp3">JUKEN CAMP</div>
+</div>
+
+<header id="hd" style="display:none">
+  <div onclick="goBack()" style="cursor:pointer">
+    <div class="hcamp">JUKEN CAMP</div>
+    <div class="htl">沖縄県の<span>読解問題</span>を読む</div>
+  </div>
+  <div class="hsr"><input type="text" placeholder="作品・キーワードを検索…" id="si" oninput="filt()"></div>
+</header>
+
+
+
+<main class="ml" id="ml" style="display:none">
+  <div class="hero">
+    <div class="hero-eyebrow">沖縄県立高校入試 国語 令和３〜７年度</div>
+    <h1>入試の読解問題は<br>何を伝えたかったのか</h1>
+    <p>過去５年間の沖縄県立高校入試に出た読解問題を厳選。<br>「出題者が何を問いたかったか」の本質を読む。<br>読むほどに身につく、中３という時期に必要な力と視点。</p>
+  </div>
+  <div id="yf" class="year-filter"></div>
+  <div class="ct" id="ct"></div>
+  <div class="sg" id="sg"></div>
+</main>
+
+<div class="rv" id="rv"></div>
+
+<!-- ══════════ 問題の読み方ページ ══════════ -->
+<div class="compass-page" id="compass-page">
+
+  <div class="compass-hero">
+    <div class="compass-eyebrow">令和３〜７年度　５年分の問題から見えてきたこと</div>
+    <h1>国語の読解問題には、<br>解き方の「手順」があります</h1>
+    <p>過去５年分の問題を分析すると、出題者がいつも同じ「力」を問っていることがわかります。<br>その手順を知っておくだけで、どの年度の問題でも同じように対処できます。</p>
+  </div>
+
+  <!-- ① 3大原則 -->
+  <div class="c-sec">
+    <div class="c-sec-header">
+      <div class="c-sec-num jade">1</div>
+      <div>
+        <div class="c-sec-title">読解問題の「３大原則」</div>
+        <div class="c-sec-sub">この３つを知っていれば、どの問題も同じ手順で解けます</div>
+      </div>
+    </div>
+
+    <div class="three-powers">
+      <div class="power-card p1">
+        <div class="power-n">原則 01</div>
+        <div class="power-title">答えは<br>「本文の中」にしかない</div>
+        <div class="power-body">自分の感想や常識で答えてはいけません。「筆者がどう書いているか」だけが正解です。国語のテストは「あなたの意見」を聞いているのではなく、「この文章には何と書いてあるか」を聞いています。</div>
+        <div class="power-example">NG：「きっと悲しかったと思う」（自分の想像）<br>OK：「○○という描写から、悲しみが読み取れる」（本文の根拠）</div>
+      </div>
+      <div class="power-card p2">
+        <div class="power-n">原則 02</div>
+        <div class="power-title">筆者の言いたいことは<br>「形を変えて何度も出てくる」</div>
+        <div class="power-body">同じことを、①難しい言葉で言う→②例え話で言う→③まとめ直す。この３つはぜんぶ同じことの言い換えです。一か所わからなくても、別の場所でもっとわかりやすく言い直してくれています。</div>
+        <div class="power-example">キーワードが何度も出てくる = そこが筆者の言いたいこと<br>「つまり」「要するに」の後 = 言い換えのまとめ</div>
+      </div>
+      <div class="power-card p3">
+        <div class="power-n">原則 03</div>
+        <div class="power-title">ヒントは<br>「傍線部のすぐそば」にある</div>
+        <div class="power-body">傍線が引かれたら、まず前後２〜３文を徹底的に読みましょう。答えの８割はそこにあります。「近所から先に探す、遠くは後で」という順番が大切です。</div>
+        <div class="power-example">傍線部を見たら → まず前の文・後ろの文<br>それでも見つからない → 同じ段落 → 他の段落へ</div>
+      </div>
+    </div>
+
+    <div style="background:rgba(58,122,88,.06);border:1.5px solid rgba(58,122,88,.2);border-radius:12px;padding:1.2rem 1.5rem;margin-top:1rem;">
+      <div style="font-size:.6rem;font-weight:900;letter-spacing:.2em;color:var(--jade);margin-bottom:.6rem;">▶ この３原則が問題にどう使われるか</div>
+      <div style="font-size:.82rem;line-height:2;color:#555;font-family:'Shippori Mincho',serif;">過去５年分の沖縄県立入試を見ると、すべての設問がこの３原則のどれかに直結しています。「気持ちを答えなさい」→原則①（本文の根拠）、「なぜか答えなさい」→原則③（傍線周辺のヒント）、「この言葉はどういう意味か」→原則②（言い換えを探す）。手順が決まっているから、センスに頼らなくて済みます。</div>
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- ② 小説と論説の手順 -->
+  <div class="c-sec">
+    <div class="c-sec-header">
+      <div class="c-sec-num ocean">2</div>
+      <div>
+        <div class="c-sec-title">小説と論説文、ジャンル別の「読む手順」</div>
+        <div class="c-sec-sub">ジャンルが違えば、探すものが違います</div>
+      </div>
+    </div>
+
+    <div class="trend-grid">
+      <div class="trend-card story-t">
+        <span class="trend-cat">小説・物語</span>
+        <div class="trend-title">探すのは「気持ちの根拠」</div>
+        <ul class="trend-items">
+          <li><strong>気持ちは直接書かれません。</strong>「台所の音が荒い」「拳を握る」「顔が熱い」など、<strong>描写・行動・体の反応</strong>が気持ちのサインです</li>
+          <li>まず気持ちが<strong>プラスかマイナスか</strong>だけ判断する。それだけで選択肢を半分に絞れます</li>
+          <li>セリフより<strong>地の文（ナレーション部分）</strong>に本音があります。「大丈夫」と言いながら手が震えていたら、本音は不安です</li>
+          <li>気持ちの変化を問われたら<strong>「変化前」「きっかけ」「変化後」</strong>の三点を答えます</li>
+          <li>情景描写（天気・景色・音）が出たら<strong>登場人物の気持ちと対応</strong>しています。これは出題者が用意したヒントです</li>
+        </ul>
+      </div>
+      <div class="trend-card essay-t">
+        <span class="trend-cat">論説・説明文</span>
+        <div class="trend-title">探すのは「筆者の主張」</div>
+        <ul class="trend-items">
+          <li><strong>「しかし」「だが」「ところが」の直後</strong>が筆者の本音です。逆接の後ろを二重線で囲む習慣をつけましょう</li>
+          <li>「確かに〜。しかし…」という構造では、<strong>「確かに」の後は筆者の意見ではありません。</strong>「しかし」以降だけが主張です</li>
+          <li><strong>「つまり」「要するに」の後</strong>はまとめです。記述の答えとして使える言葉が来ます</li>
+          <li>キーワードが出てきたら<strong>「この文章での意味」</strong>を本文から探します。辞書の意味とズレていることが多く、そこが問題になります</li>
+          <li>具体例（人物・事件・実験）が出たら<strong>「これは何の証明のために書かれているか」</strong>を考えます。例そのものは答えに使いません</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="background:rgba(26,95,122,.04);border:1.5px solid rgba(26,95,122,.15);border-radius:12px;padding:1.2rem 1.5rem;margin-top:1rem;">
+      <div style="font-size:.6rem;font-weight:900;letter-spacing:.2em;color:var(--ocean);margin-bottom:.6rem;">▶ 沖縄県立入試の論説文に特有のパターン</div>
+      <div style="font-size:.82rem;line-height:2;color:#555;font-family:'Shippori Mincho',serif;">過去５年の論説文はすべて「一般に思われているイメージを否定して、別の視点を提示する」構造（二項対立型）です。ナイチンゲール・はずれ者・倍速視聴・AIと人間……どれも「AではなくBだ」の形で論が進みます。「しかし」を見つけたら、その前が否定される一般論で、その後が筆者の主張です。</div>
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- ③ 出題パターンと答え方 -->
+  <div class="c-sec">
+    <div class="c-sec-header">
+      <div class="c-sec-num coral">3</div>
+      <div>
+        <div class="c-sec-title">問われ方の「型」と、点になる「答え方の型」</div>
+        <div class="c-sec-sub">問題文を見た瞬間に、何をどう答えるか決まります</div>
+      </div>
+    </div>
+
+    <div class="pattern-list">
+      <div class="pattern-item">
+        <div class="pattern-icon a">①</div>
+        <div class="pattern-body">
+          <div class="pattern-name">「どんな気持ちか」「心情を答えよ」系</div>
+          <div class="pattern-desc">最頻出です。「悲しい」などの気持ちの言葉だけでは不正解です。<strong>本文のどこからそう判断できるか（根拠）</strong>をセットで書く必要があります。気持ちを直接表す言葉がない場合は、描写・行動・体の反応から根拠を作ります。</div>
+          <div class="pattern-hint"><strong>答えの型：</strong>「（本文の根拠：○○という描写・行動・言葉）から、（気持ち）が読み取れる」<br><strong>NG：</strong>気持ちの言葉のみ　<strong>OK：</strong>根拠＋気持ちのセット</div>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-icon b">②</div>
+        <div class="pattern-body">
+          <div class="pattern-name">「気持ちはどのように変化したか」系</div>
+          <div class="pattern-desc">変化の「前」と「後」だけ書いても不完全です。<strong>「何をきっかけに変わったか」</strong>を必ず入れてください。このきっかけは本文の具体的な場面・言葉から探します。</div>
+          <div class="pattern-hint"><strong>答えの型：</strong>「最初は（変化前の気持ち）だったが、（きっかけとなる出来事・場面）をきっかけに、（変化後の気持ち）に変わった」</div>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-icon c">③</div>
+        <div class="pattern-body">
+          <div class="pattern-name">「なぜか」「理由を答えよ」系</div>
+          <div class="pattern-desc">理由は必ず本文の中にあります。自分の想像や常識で書いても点になりません。<strong>傍線部の前後２〜３文</strong>に「〜から」「〜ため」「〜ので」という表現を探しましょう。見つからない場合は同じ段落を探します。</div>
+          <div class="pattern-hint"><strong>答えの型：</strong>「（本文の根拠）から（理由）であるため」※語尾は「〜から」で締める<br><strong>NG：</strong>気になったから　<strong>OK：</strong>本文の「○○」という記述から〜とわかるため</div>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-icon d">④</div>
+        <div class="pattern-body">
+          <div class="pattern-name">「どういう意味か」「言葉の意味を説明せよ」系</div>
+          <div class="pattern-desc">辞書の意味で答えると不正解になります。論説文のキーワードには<strong>「この文章の中での定義」</strong>があります。初めてその言葉が出てきた付近・「〜とは〜である」という文を探してください。</div>
+          <div class="pattern-hint"><strong>答えの型：</strong>「この文章では、（キーワード）とは（本文での定義・説明）のことを指している」<br>例：「エシカル」＝辞書では「倫理的な」だが、この文章では「自分のものさしを持って立ち止まること」</div>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-icon e">⑤</div>
+        <div class="pattern-body">
+          <div class="pattern-name">「この例はなぜ出されているか」「どんな役割か」系</div>
+          <div class="pattern-desc">論説文に出てくる具体例（人物・事件・実験）は<strong>筆者の主張を証明するために書かれています。</strong>具体例そのものを答えに使ってはいけません。「この例の前後にある主張」を答えに使います。</div>
+          <div class="pattern-hint"><strong>答えの型：</strong>「（事例）は、（主張・論点）を具体的に示す例として書かれている」<br>確認法：具体例の直前・直後の抽象的な一文が答えのヒントになっています</div>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-icon f">⑥</div>
+        <div class="pattern-body">
+          <div class="pattern-name">「二つの文章を比べて答えよ」系</div>
+          <div class="pattern-desc">令和３年から毎年出ています。まず<strong>それぞれの文章の「言いたいこと（主張）」を一言でメモ</strong>してから、共通点・相違点を整理します。「視点の違い（誰の立場から書いているか）」を軸にすると整理しやすいです。</div>
+          <div class="pattern-hint"><strong>答えの型：</strong>「文章①は（誰の視点）から（主張）を論じ、文章②は（誰の視点）から（主張）を論じている。共通しているのは（共通テーマ）という点である」</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- ④ 接続詞の使い方 -->
+  <div class="c-sec">
+    <div class="c-sec-header">
+      <div class="c-sec-num sun">4</div>
+      <div>
+        <div class="c-sec-title">接続詞は「論理の道しるべ」</div>
+        <div class="c-sec-sub">接続詞の種類を知るだけで、文章の地図が読めます</div>
+      </div>
+    </div>
+
+    <p style="font-size:.82rem;color:#777;line-height:2;margin-bottom:1.4rem;font-family:'Shippori Mincho',serif;">読みながら接続詞に○をつける習慣をつけましょう。接続詞の前後で「話が変わる・まとまる・理由が来る」のかがわかります。過去５年の沖縄県立入試では、すべての論説文でこの接続詞の読み方が解答の鍵になっています。</p>
+
+    <div class="pattern-list">
+      <div class="pattern-item">
+        <div class="pattern-icon a" style="background:rgba(194,90,58,.15);font-weight:900;font-size:.8rem;color:var(--coral);">逆</div>
+        <div class="pattern-body">
+          <div class="pattern-name">逆接「しかし」「だが」「ところが」「しかしながら」</div>
+          <div class="pattern-desc">最重要です。<strong>逆接の後ろが、筆者が最も言いたいことです。</strong>「確かに〜。しかし…」という構造では、「確かに」の後は筆者の意見ではなく一般論です。「しかし」以降だけを答えに使います。</div>
+          <div class="pattern-hint"><strong>実際の使われ方：</strong>「ナイチンゲールは優しい看護師のイメージがある。<u>しかし</u>、実際はデータで政府を動かした社会改革者だ」→「しかし」の後が筆者の主張（令和6年度）</div>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-icon b" style="background:rgba(26,95,122,.15);font-weight:900;font-size:.8rem;color:var(--ocean);">結</div>
+        <div class="pattern-body">
+          <div class="pattern-name">まとめ「つまり」「要するに」「すなわち」「言い換えれば」</div>
+          <div class="pattern-desc"><strong>これの後ろには、前の内容のまとめが来ます。</strong>記述の答えとして使えることが多いです。また、難しい言葉で書かれていた主張が、ここでわかりやすく言い直されることもあります（原則②の言い換え）。</div>
+          <div class="pattern-hint"><strong>実際の使われ方：</strong>食料生産の話・消費者の話を経て「<u>つまり</u>、買うという行為は世界とつながっている」→このまとめが論文全体の核（令和5年度）</div>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-icon c" style="background:rgba(58,122,88,.15);font-weight:900;font-size:.8rem;color:var(--jade);">例</div>
+        <div class="pattern-body">
+          <div class="pattern-name">例示「たとえば」「具体的には」「たとえて言えば」</div>
+          <div class="pattern-desc"><strong>具体例が始まるサインです。</strong>具体例そのものは答えに使いません。「たとえば」の前にある抽象的な主張、または「たとえば」の後の具体例の直後に来る抽象的なまとめを使います。</div>
+          <div class="pattern-hint"><strong>実際の使われ方：</strong>白い蛾・黒い蛾の話は「<u>たとえば</u>」で始まる→これは「はずれ者が環境変化で生き残る」という主張の証拠（令和4年度）</div>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-icon d" style="background:rgba(106,74,138,.15);font-weight:900;font-size:.8rem;color:var(--grape);">因</div>
+        <div class="pattern-body">
+          <div class="pattern-name">理由「なぜなら」「というのも」「〜から」「〜ため」「〜ので」</div>
+          <div class="pattern-desc"><strong>「なぜか」を問う問いへの答えがここにあります。</strong>「なぜなら」の後ろ、または「〜から」「〜ため」の前にある内容が理由です。理由を答えるときは「〜から」「〜ため」で語尾を締めます。</div>
+          <div class="pattern-hint"><strong>答えの確認法：</strong>「なぜか」と聞かれたら「〜から」で答えられる文を本文から探す。語尾が「〜から」になっていれば理由の形になっています</div>
+        </div>
+      </div>
+      <div class="pattern-item">
+        <div class="pattern-icon e" style="background:rgba(198,154,32,.15);font-weight:900;font-size:.8rem;color:var(--sun);">対</div>
+        <div class="pattern-body">
+          <div class="pattern-name">対比「一方」「それに対して」「逆に」「反対に」</div>
+          <div class="pattern-desc"><strong>二つのものを比べているサインです。</strong>対比の構造が出てきたら、「A（否定される側）」と「B（筆者が推す側）」を整理します。論説文の設問はほぼ必ず「どちらが筆者の主張か」を問います。</div>
+          <div class="pattern-hint"><strong>実際の使われ方：</strong>「AIは量はできる。<u>一方</u>、疑う力はない」→対比で人間の特質を際立たせる（令和3年度）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- ⑤ 答え方テンプレ -->
+  <div class="c-sec">
+    <div class="c-sec-header">
+      <div class="c-sec-num grape">5</div>
+      <div>
+        <div class="c-sec-title">「点になる答え方」の型をおさえる</div>
+        <div class="c-sec-sub">どの問題にも使える、答えの組み立て方</div>
+      </div>
+    </div>
+
+    <div class="template-list">
+      <div class="tmpl">
+        <div class="tmpl-q">気持ちを答えなさい系の問題</div>
+        <div class="tmpl-bad">悲しかった。</div>
+        <div class="tmpl-good">「○○という（描写・言葉・行動）から、△△という気持ち（悲しみ・不安・喜びなど）が読み取れる。」</div>
+        <div class="tmpl-note">気持ちの言葉だけでは0点か減点になります。必ず「どこから読み取れるか」をセットにしましょう。</div>
+      </div>
+      <div class="tmpl">
+        <div class="tmpl-q">気持ちの変化を説明しなさい系</div>
+        <div class="tmpl-bad">最初は不安だったが、後から安心した。</div>
+        <div class="tmpl-good">「最初は（A：〜という気持ち）だったが、（きっかけとなる出来事・場面）をきっかけに、（B：〜という気持ち）に変わった。」</div>
+        <div class="tmpl-note">「きっかけ」を入れると答えが完成形になります。きっかけの部分は本文の言葉を使いましょう。</div>
+      </div>
+      <div class="tmpl">
+        <div class="tmpl-q">なぜか・理由を答えなさい系</div>
+        <div class="tmpl-bad">気になったから。</div>
+        <div class="tmpl-good">「（本文の根拠：〜という記述）から、（理由）ということがわかるため、（行動・発言）をした。」</div>
+        <div class="tmpl-note">「〜から」という語尾で締めると理由を答えている形になります。自分の想像は一切書かないようにしましょう。</div>
+      </div>
+      <div class="tmpl">
+        <div class="tmpl-q">言葉の意味を答えなさい系（論説文）</div>
+        <div class="tmpl-bad">倫理的・道徳的な消費のこと。（辞書の意味）</div>
+        <div class="tmpl-good">「この文章では、（キーワード）とは（本文で説明されている内容）のことを指している。」</div>
+        <div class="tmpl-note">辞書の意味ではなく「この文章の中での定義」を本文から探して使いましょう。</div>
+      </div>
+      <div class="tmpl">
+        <div class="tmpl-q">二つの文章を比べて答えなさい系</div>
+        <div class="tmpl-bad">文章①も文章②も、ものを大切にすることについて書いている。</div>
+        <div class="tmpl-good">「文章①は（誰の視点・何の立場）から（主張）を論じ、文章②は（誰の視点・何の立場）から（主張）を論じている。共通しているのは（共通テーマ）という点である。」</div>
+        <div class="tmpl-note">「視点の違い（誰の立場か）」を軸に整理すると、二文章比較の答えが組み立てやすくなります。</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- ⑥ 年度別ハイライト -->
+  <div class="c-sec">
+    <div class="c-sec-header">
+      <div class="c-sec-num jade">6</div>
+      <div>
+        <div class="c-sec-title">令和３〜７年度の流れ</div>
+        <div class="c-sec-sub">何が問われてきたかを時系列で見る</div>
+      </div>
+    </div>
+    <div class="year-timeline">
+      <div class="yt-item">
+        <div class="yt-year">令和７年度</div>
+        <div class="yt-content">
+          小説「台所のおと」（幸田文）→ <strong>音の描写から気持ちを読む</strong>。「書かれていない気持ち」の読解の最も洗練された出題。<br>
+          論説「映画を早送りで観る人たち」（稲田豊史）→ タイパ・共感性羞恥など<strong>現代的なキーワードの本文内定義</strong>を問う。
+        </div>
+      </div>
+      <div class="yt-item">
+        <div class="yt-year">令和６年度</div>
+        <div class="yt-content">
+          小説「孫係」（西加奈子）→ <strong>言葉と本音のズレ</strong>。家族の会話にある「照れ・遠慮・意地」を読む力が問われた。<br>
+          論説「ミライの授業」（滝本哲史）→ ナイチンゲールの「当たり前のひっくり返し」。<strong>AではなくBだ型の典型</strong>。
+        </div>
+      </div>
+      <div class="yt-item">
+        <div class="yt-year">令和５年度</div>
+        <div class="yt-content">
+          小説「ファミリーツリー」（小川糸）→ <strong>自然描写と気持ちの重なり</strong>・二人の人物の対比。<br>
+          論説「大量廃棄社会」＋「はじめてのエシカル」→ <strong>二文章比較の定番形式</strong>が確立。作る側と買う側の視点を整理する力が問われた。
+        </div>
+      </div>
+      <div class="yt-item">
+        <div class="yt-year">令和４年度</div>
+        <div class="yt-content">
+          小説「春や春」（森谷明子）→ <strong>「友」という言葉一つの重さ</strong>。言葉の意味を場面から読む問いが核心。<br>
+          論説「はずれ者が進化をつくる」（稲垣栄洋）→ 二文章＋事例（蛾）の意味を問う。<strong>多様性というテーマ</strong>を生物学と社会でつなぐ。
+        </div>
+      </div>
+      <div class="yt-item">
+        <div class="yt-year">令和３年度</div>
+        <div class="yt-content">
+          小説「サマーキャンプへようこそ」（重松清）→ <strong>父と息子の「不器用な愛情」</strong>。意図と受け取り方のズレを読む。<br>
+          論説「人間の本性」＋徒然草（資料３つ）→ <strong>最難関構成</strong>。AIの俳句・現代評論・古典を三つつなげる読み方が問われた。「疑う力」が共通テーマ。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- メッセージ -->
+  <div class="message-box">
+    <div class="msg-label">最後に、まとめとして</div>
+    <div class="msg-title">国語はセンスではなく、<br>手順で解く問題です</div>
+    <div class="msg-body">
+      「答えは本文の中にある」「筆者の言いたいことは形を変えて繰り返される」「ヒントは傍線のそばにある」——この３つを出発点に、問われ方の型と答え方の型を組み合わせれば、初めて見る文章でも同じ手順で対処できます。<br><br>
+      沖縄県立入試の国語は、過去５年間ずっと同じことを問い続けています。気持ちの根拠、変化のきっかけ、言葉の本文内の意味、具体例の役割、複数文章の比較——これらすべてに、決まった答え方の型があります。<br><br>
+      型を身につけること。それが一番の近道です。
+    </div>
+  </div>
+
+</div><!-- /compass-page -->
+
+<!-- ══════════ 現代のテーマページ ══════════ -->
+<div class="theme-page" id="theme-page">
+
+  <div class="theme-hero">
+    <div class="theme-hero-eyebrow">沖縄県立入試 過去５年分の分析 ＋ 次の一手</div>
+    <h1>論説文に出てくる<br>「現代のテーマ」を知る</h1>
+    <p>入試の論説文は、いつも「今の社会で大事なこと」をテーマにしています。<br>どんなテーマが出やすいかを知っておくだけで、<br>初めて読む文章でも「あ、このパターンだ」と落ち着いて読めます。</p>
+  </div>
+
+  <div class="theme-intro-box">
+    <p>論説文のテーマは毎年変わりますが、「大きなジャンル」は同じです。「人間とテクノロジー」「多様性・個性」「環境・消費」「コミュニケーション」——このあたりが過去５年でくり返し問われています。</p>
+    <p>このページでは、<span style="color:var(--coral);font-weight:700">すでに出たテーマ</span>と<span style="color:var(--ocean);font-weight:700">まだ出ていないが大切なテーマ</span>を並べて紹介します。どちらも同じくらい重要です。テーマを知れば、文章の「言いたいこと」への見当がつくようになります。</p>
+  </div>
+
+  <!-- ① すでに出たテーマ -->
+  <div class="theme-sec">
+    <div class="theme-sec-header">
+      <div class="theme-sec-icon" style="background:rgba(194,90,58,.1);font-size:1rem">📋</div>
+      <div>
+        <div class="theme-sec-title">過去５年で出たテーマ（令和３〜７年度）</div>
+        <div class="theme-sec-sub">これらは「また出る可能性がある」テーマでもあります</div>
+      </div>
+    </div>
+
+    <div class="tc-grid">
+
+      <div class="tc hot">
+        <div class="tc-head">
+          <div class="tc-name">倍速視聴・タイパ（タイムパフォーマンス）</div>
+          <span class="tc-badge">令和７年度　出題済み</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:95%"></div></div></div>
+        <div class="tc-body">映画やドラマを早送りで観る・10秒飛ばしで観るという行動が若者に広がっています。「タイパ」とは「時間対効果」のこと。限られた時間で多くのコンテンツを消費したいという現代の感覚から来ています。<br>
+        筆者は「批判」ではなく「なぜそうなるのか」を分析しています。社会の変化が生んだ新しい消費の形として論じられます。「共感性羞恥」（ドキドキする場面が苦手・感情移入しすぎて恥ずかしい）という心理もセットで理解しておくと入試に使えます。</div>
+        <div class="tc-next"><strong>来年度以降に備えるなら：</strong>「効率と体験はトレードオフか」「動画・音楽・読書の消費の仕方は変わったか」「速さを求める社会のメリット・デメリット」などで自分の意見を持っておこう</div>
+        <div class="tc-past"><strong>出題作品：</strong>「映画を早送りで観る人たち」稲田豊史（令和７年度）</div>
+      </div>
+
+      <div class="tc warm">
+        <div class="tc-head">
+          <div class="tc-name">多様性・はずれ者・個性の価値</div>
+          <span class="tc-badge">令和４年度　出題済み</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:92%"></div></div></div>
+        <div class="tc-body">「みんなと同じ」が安全とされる一方で、「はずれ者（多数派と違う個体）」こそが進化・変化をもたらすという視点。生物学（蛾の色の多様性）と社会の話をつなぐ論の展開が典型的です。<br>
+        「標準化・効率化は本当に正しいか」「違いは弱さではなく強みである」という論旨は、教育・社会・自然のどの分野でも応用されます。この視点は人権・差別・障がい者支援の話とも重なります。</div>
+        <div class="tc-next"><strong>来年度以降に備えるなら：</strong>「学校で『みんな同じ』は本当に大切か」「少数意見の重要性」「LGBTQ＋の話と個性の尊重」などと連動して考えてみよう</div>
+        <div class="tc-past"><strong>出題作品：</strong>「はずれ者が進化をつくる」稲垣栄洋（令和４年度）</div>
+      </div>
+
+      <div class="tc green">
+        <div class="tc-head">
+          <div class="tc-name">エシカル消費・大量廃棄社会</div>
+          <span class="tc-badge">令和５年度　出題済み</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:88%"></div></div></div>
+        <div class="tc-body">「エシカル」とは倫理的・道徳的という意味。「エシカル消費」＝自分の価値観・倫理観を持ってものを買うこと。安ければいいのか、それとも「誰が・どんな環境で作ったか」まで考えるのか。<br>
+        大量廃棄社会という問題と、買う側（消費者）の責任がセットで論じられます。「作る側の視点」と「買う側の視点」を二文章で比較する問題形式でした。「フードロス」「ファストファッション」「フェアトレード」などと結びつく重要テーマ。</div>
+        <div class="tc-next"><strong>来年度以降に備えるなら：</strong>「服を買うとき・食べ物を選ぶとき、どこまで考えるか」「安さの裏に何があるか」「SDGsの目標12（つくる責任・つかう責任）」を読んでおこう</div>
+        <div class="tc-past"><strong>出題作品：</strong>「大量廃棄社会」「はじめてのエシカル」（令和５年度）</div>
+      </div>
+
+      <div class="tc grape">
+        <div class="tc-head">
+          <div class="tc-name">AI・人間と機械の関係</div>
+          <span class="tc-badge">令和３年度　出題済み</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:90%"></div></div></div>
+        <div class="tc-body">AIが俳句を作れるか、という話題から「人間だけが持つ能力とは何か」を問う論点でした。「疑う力・判断する力・意味を問う力」こそが人間の本性だという論旨。<br>
+        令和６年以降もAIの話題は社会で急拡大しています。「ChatGPTは作文が書けるか」「AIに仕事が奪われるか」「AIと共存するとは何か」など、発展形のテーマは次の出題でも十分ありえます。</div>
+        <div class="tc-next"><strong>来年度以降に備えるなら：</strong>「AIに任せていいこと・いけないこと」「創造性とは何か」「人間らしさとはどこにあるか」という問いで自分の考えを整理しよう</div>
+        <div class="tc-past"><strong>出題作品：</strong>「人間の本性」＋徒然草（令和３年度）</div>
+      </div>
+
+      <div class="tc sun">
+        <div class="tc-head">
+          <div class="tc-name">「当たり前のひっくり返し」と違和感の力</div>
+          <span class="tc-badge">令和６年度　出題済み</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:85%"></div></div></div>
+        <div class="tc-body">「みんなが知っているイメージをデータで否定し、別の視点を提示する」という論の型。ナイチンゲールの例では「やさしい看護師」ではなく「統計で政府を動かした社会改革者」という見方を提示しました。<br>
+        このテーマは単独のテーマというより、「イノベーション・改革・違和感から生まれる変化」という視点として、どんな分野の文章でも登場します。「なぜ当たり前に疑問を持つことが大切か」は論説文全般の根幹テーマ。</div>
+        <div class="tc-next"><strong>来年度以降に備えるなら：</strong>「自分が当たり前だと思っていたことで、違う見方をしたとき」を思い出してみよう。「常識を疑う力」は科学・歴史・社会どの分野にも登場します</div>
+        <div class="tc-past"><strong>出題作品：</strong>「ミライの授業」滝本哲史（令和６年度）</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- ② 次に出そうなテーマ -->
+  <div class="theme-sec">
+    <div class="theme-sec-header">
+      <div class="theme-sec-icon" style="background:rgba(26,95,122,.1);font-size:1rem">🔭</div>
+      <div>
+        <div class="theme-sec-title">次に出やすい・準備しておきたいテーマ</div>
+        <div class="theme-sec-sub">過去の分析から見えてくる「未出題だが重要」なテーマ群</div>
+      </div>
+    </div>
+
+    <div class="tc-grid">
+
+      <div class="tc warm">
+        <div class="tc-head">
+          <div class="tc-name">SNS・情報との関わり方</div>
+          <span class="tc-badge">次に出やすい</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:97%"></div></div></div>
+        <div class="tc-body">スマホやSNSが日常になった中で、「情報を選ぶ力（情報リテラシー）」「フィルターバブル（自分が見たい情報しか見えなくなる現象）」「デマや誤情報の広がり方」「いいね文化と承認欲求」などが中学生にとって最もリアルなテーマです。<br>
+        「情報を受け取るだけでなく批判的に読む力」「事実と意見を区別する力」は、国語の読解力とも直結します。近年の中学教科書でも必ず取り上げられているトピックです。</div>
+        <div class="tc-next"><strong>準備のポイント：</strong>「SNSを使っていて困ったこと・気になったこと」を具体的に思い出してみよう。「情報を疑う」「発信する責任」というキーワードをメモしておく</div>
+      </div>
+
+      <div class="tc warm">
+        <div class="tc-head">
+          <div class="tc-name">気候変動・環境問題・SDGs</div>
+          <span class="tc-badge">次に出やすい</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:93%"></div></div></div>
+        <div class="tc-body">「地球温暖化」「カーボンニュートラル（炭素の排出をゼロに）」「再生可能エネルギー」「生物多様性の喪失」などは世界的な話題です。沖縄という地域は特にサンゴ礁・海洋環境への関心が高く、地域性とも重なるテーマです。<br>
+        「一人ひとりの行動が世界とつながっている」という論旨は、令和５年度のエシカル消費テーマとも連動しています。「現状・原因・対策・私たちにできること」という構造で論が進むパターンが多いです。</div>
+        <div class="tc-next"><strong>準備のポイント：</strong>SDGsの17の目標を全部覚える必要はなし。「なぜ今これが必要か」という理由を一言で言えるようにしておこう</div>
+      </div>
+
+      <div class="tc green">
+        <div class="tc-head">
+          <div class="tc-name">孤立・つながり・コミュニティの変化</div>
+          <span class="tc-badge">次に出やすい</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:88%"></div></div></div>
+        <div class="tc-body">コロナ禍以降、「人との距離感」「孤独・孤立」「オンラインのつながりはリアルと違うか」という問いが社会で増えています。「家族の形が変わっている」「地域のつながりが薄れている」という話も論説文の定番テーマです。<br>
+        小説テーマ（家族・友情）とも重なる部分が大きく、「人はなぜつながりを必要とするのか」「スマホがあっても孤独になるのはなぜか」という論旨での出題が見込まれます。</div>
+        <div class="tc-next"><strong>準備のポイント：</strong>「リアルのつながりとオンラインのつながりは何が違うか」「孤独はなぜ生まれるか」を考えてみよう</div>
+      </div>
+
+      <div class="tc grape">
+        <div class="tc-head">
+          <div class="tc-name">アイデンティティ・自己表現・「自分らしさ」</div>
+          <span class="tc-badge">次に出やすい</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:85%"></div></div></div>
+        <div class="tc-body">「自分とは何者か」「他者の目を気にしすぎる社会」「キャラを演じること」「本当の自分はどこにいるか」——これらは中学生が最もリアルに感じているテーマです。<br>
+        哲学・心理学・社会学の視点から書かれた文章が多く、「人は一人で自分を形成できるか」「他者がいるから自分が生まれる」という論旨も登場します。「自己肯定感」「承認欲求」というキーワードもよく使われます。</div>
+        <div class="tc-next"><strong>準備のポイント：</strong>「本当の自分」「キャラを演じる」「SNSでの自分と実際の自分の違い」を自分の言葉で語れるようにしておこう</div>
+      </div>
+
+      <div class="tc hot">
+        <div class="tc-head">
+          <div class="tc-name">ジェンダー・平等・固定観念をほぐす</div>
+          <span class="tc-badge">次に出やすい</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:82%"></div></div></div>
+        <div class="tc-body">「男だから・女だからこうあるべき」という固定観念（ジェンダーステレオタイプ）への問い直しは、社会で大きなテーマになっています。「LGBTQ+」「選択的夫婦別姓」「スポーツでの男女区分」など具体的な話題と結びついて論じられます。<br>
+        入試では「特定の立場を批判する」のではなく、「なぜ固定観念が生まれるか」「それを問い直すことの意味」という形で出ることが多いです。多様性テーマ（令和４年度）の延長線上にある話。</div>
+        <div class="tc-next"><strong>準備のポイント：</strong>「当たり前だと思っていたことが、実は思い込みだった」という体験を思い出してみよう。性別に関わらず「なぜそう思っていたか」を言語化できると強い</div>
+      </div>
+
+      <div class="tc sun">
+        <div class="tc-head">
+          <div class="tc-name">科学的思考・データで考える力</div>
+          <span class="tc-badge">次に出やすい</span>
+        </div>
+        <div class="freq-bar"><span class="freq-label">重要度</span><div class="freq-track"><div class="freq-fill" style="width:80%"></div></div></div>
+        <div class="tc-body">ナイチンゲールの話（令和６年）はまさに「データで相手を動かした」という科学的思考のテーマでした。「印象・感情ではなく証拠・根拠で判断する」「統計の読み方」「相関と因果の違い」なども出てきやすいです。<br>
+        「なんとなくそう思う」ではなく「なぜそう言えるか」を問う姿勢は、国語の記述力とも完全に一致します。理科・社会とも重なる「思考の基本」として位置づけられています。</div>
+        <div class="tc-next"><strong>準備のポイント：</strong>「なぜそう言えるか」を必ず一言つけ加える習慣を。ニュースを見て「これは事実？それとも意見？」を考えるだけでもOK</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- ③ どのテーマにも共通する「論の型」 -->
+  <div class="theme-sec">
+    <div class="theme-sec-header">
+      <div class="theme-sec-icon" style="background:rgba(58,122,88,.1);font-size:1rem">🧩</div>
+      <div>
+        <div class="theme-sec-title">どのテーマでも同じ「論の型」が使われている</div>
+        <div class="theme-sec-sub">テーマが変わっても、筆者の伝え方のパターンは変わりません</div>
+      </div>
+    </div>
+
+    <div style="background:var(--card);border-radius:14px;padding:1.5rem 1.7rem;box-shadow:0 2px 10px var(--shadow);margin-bottom:1rem">
+      <div style="font-size:.6rem;font-weight:900;letter-spacing:.2em;color:var(--jade);margin-bottom:.8rem">▶ 沖縄県立入試の論説文に５年連続で使われている構造</div>
+      <div style="font-family:'Shippori Mincho',serif;font-size:.9rem;line-height:2.2;color:#444">
+        <p style="margin-bottom:.9em">どのテーマの論説文でも、ほぼ必ず「<strong style="color:var(--coral)">AではなくBだ</strong>」という二項対立の構造が使われています。</p>
+        <div style="display:grid;gap:.65rem;margin:.5rem 0 1rem">
+          <div style="background:rgba(194,90,58,.05);border-radius:8px;padding:.7rem 1rem;border-left:3px solid var(--coral)"><span style="font-size:.62rem;font-weight:700;color:var(--coral);display:block;margin-bottom:.2rem">令和７年度</span>「映像を楽しむ」のではなく→「快楽で効率的に消費するもの」に変わった</div>
+          <div style="background:rgba(26,95,122,.05);border-radius:8px;padding:.7rem 1rem;border-left:3px solid var(--ocean)"><span style="font-size:.62rem;font-weight:700;color:var(--ocean);display:block;margin-bottom:.2rem">令和６年度</span>「やさしい看護師」のイメージではなく→「データで政府を動かした社会改革者」</div>
+          <div style="background:rgba(58,122,88,.05);border-radius:8px;padding:.7rem 1rem;border-left:3px solid var(--jade)"><span style="font-size:.62rem;font-weight:700;color:var(--jade);display:block;margin-bottom:.2rem">令和５年度</span>「捨てる側の問題」だけでなく→「買う側にも責任がある」</div>
+          <div style="background:rgba(106,74,138,.05);border-radius:8px;padding:.7rem 1rem;border-left:3px solid var(--grape)"><span style="font-size:.62rem;font-weight:700;color:var(--grape);display:block;margin-bottom:.2rem">令和４年度</span>「はずれ者は不要」ではなく→「進化をもたらす存在」</div>
+          <div style="background:rgba(198,154,32,.05);border-radius:8px;padding:.7rem 1rem;border-left:3px solid var(--sun)"><span style="font-size:.62rem;font-weight:700;color:var(--sun);display:block;margin-bottom:.2rem">令和３年度</span>「AIも人間も同じ知性を持つ」わけではなく→「疑い・問い直す力は人間固有」</div>
+        </div>
+        <p>どのテーマでも「読者が当たり前と思っていることを否定→筆者の視点を提示」という流れです。<strong style="color:var(--ocean)">「しかし」という言葉を見たら、その直後が筆者の主張</strong>です。これはどのテーマでも使えるルールです。</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- ④ テーマ別キーワード辞典 -->
+  <div class="theme-sec">
+    <div class="theme-sec-header">
+      <div class="theme-sec-icon" style="background:rgba(106,74,138,.1);font-size:1rem">📖</div>
+      <div>
+        <div class="theme-sec-title">テーマ別・知っておくと得するキーワード</div>
+        <div class="theme-sec-sub">本文に出てきたとき「あ、知ってる」と思えると読みやすくなります</div>
+      </div>
+    </div>
+
+    <style>
+    .kw-grid{display:grid;gap:1.2rem}
+    .kw-section{background:var(--card);border-radius:14px;padding:1.4rem 1.5rem;box-shadow:0 2px 10px var(--shadow)}
+    .kw-section-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;padding-bottom:.7rem;border-bottom:1px solid var(--paper2)}
+    .kw-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .kw-section-title{font-family:'Zen Old Mincho',serif;font-size:.92rem;font-weight:900;color:var(--ink)}
+    .kw-list{display:flex;flex-direction:column;gap:.55rem}
+    .kw-item{display:grid;grid-template-columns:1fr auto;gap:.5rem;align-items:start;padding:.55rem .8rem;border-radius:8px;background:var(--paper);border-left:3px solid transparent}
+    .kw-item.tech{border-left-color:var(--ocean)}
+    .kw-item.env{border-left-color:var(--jade)}
+    .kw-item.human{border-left-color:var(--grape)}
+    .kw-item.sci{border-left-color:var(--sun)}
+    .kw-item.comm{border-left-color:var(--coral)}
+    .kw-word{font-family:'Zen Kaku Gothic New',sans-serif;font-size:.82rem;font-weight:700;color:var(--ink);line-height:1.5}
+    .kw-word .kw-eng{font-size:.65rem;color:#aaa;font-weight:400;margin-left:.3rem}
+    .kw-desc{font-family:'Shippori Mincho',serif;font-size:.77rem;line-height:1.75;color:#666;margin-top:.15rem}
+    .kw-badge-used{font-size:.5rem;font-weight:700;padding:.12rem .5rem;border-radius:8px;background:rgba(194,90,58,.1);color:var(--coral);white-space:nowrap;align-self:start;margin-top:.1rem;width:fit-content}
+    @media(max-width:600px){.kw-item{grid-template-columns:1fr}}
+    </style>
+
+    <div class="kw-grid">
+
+      <!-- テクノロジー・情報社会 -->
+      <div class="kw-section">
+        <div class="kw-section-head">
+          <div class="kw-icon" style="background:rgba(26,95,122,.1)">📱</div>
+          <div class="kw-section-title">テクノロジー・情報社会</div>
+        </div>
+        <div class="kw-list">
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">タイパ <span class="kw-eng">Time Performance</span></div>
+              <div class="kw-desc">「時間対効果」のこと。同じ時間でどれだけ多くを得られるかを重視する考え方。倍速視聴はこの感覚から来ている。</div>
+            </div>
+            <span class="kw-badge-used">令和7出題</span>
+          </div>
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">コスパ <span class="kw-eng">Cost Performance</span></div>
+              <div class="kw-desc">「費用対効果」のこと。タイパと対になる言葉。「安くて得した」という感覚。</div>
+            </div>
+          </div>
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">共感性羞恥 <span class="kw-eng">Empathy Embarrassment</span></div>
+              <div class="kw-desc">ドラマや映画のドキドキ場面・恥ずかしい場面で、見ているこちらが苦しくなる感覚。「感情移入しすぎて自分まで恥ずかしい」という心理。</div>
+            </div>
+            <span class="kw-badge-used">令和7出題</span>
+          </div>
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">フィルターバブル <span class="kw-eng">Filter Bubble</span></div>
+              <div class="kw-desc">SNSのアルゴリズムが「自分の好きそうな情報」ばかり届けるようになり、違う意見や視点が見えなくなっていく現象。</div>
+            </div>
+          </div>
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">アルゴリズム <span class="kw-eng">Algorithm</span></div>
+              <div class="kw-desc">YouTubeやInstagramの「おすすめ」を決める仕組みのこと。あなたが見た動画や検索履歴をもとに、次に何を見せるかを自動で決めている。</div>
+            </div>
+          </div>
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">情報リテラシー <span class="kw-eng">Information Literacy</span></div>
+              <div class="kw-desc">情報を「正しく読み解く力」のこと。嘘かどうか判断する力・情報の出所を確認する力・事実と意見を区別する力、すべて含む。</div>
+            </div>
+          </div>
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">フェイクニュース <span class="kw-eng">Fake News</span></div>
+              <div class="kw-desc">意図的に作られた嘘の情報や、事実をねじ曲げたニュースのこと。SNSで拡散しやすく、社会問題になっている。</div>
+            </div>
+          </div>
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">デジタルデトックス <span class="kw-eng">Digital Detox</span></div>
+              <div class="kw-desc">意図的にスマホやSNSから離れる時間を作ること。「つながりすぎ」への反省から生まれた考え方。</div>
+            </div>
+          </div>
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">承認欲求 <span class="kw-eng">Need for Approval</span></div>
+              <div class="kw-desc">「いいね」や「見てもらえた」という感覚で満たされる、人に認められたい気持ちのこと。SNSとセットで論じられることが多い。</div>
+            </div>
+          </div>
+
+          <div class="kw-item tech">
+            <div>
+              <div class="kw-word">AIの創造性</div>
+              <div class="kw-desc">AIは文章・絵・音楽を生み出せるが、それは「本当の創造か」という問い。「疑う力・意味を問う力は人間にしかない」という論点とつながる。</div>
+            </div>
+            <span class="kw-badge-used">令和3出題</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 環境・消費・社会 -->
+      <div class="kw-section">
+        <div class="kw-section-head">
+          <div class="kw-icon" style="background:rgba(58,122,88,.1)">🌍</div>
+          <div class="kw-section-title">環境・消費・社会</div>
+        </div>
+        <div class="kw-list">
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">エシカル消費 <span class="kw-eng">Ethical Consumption</span></div>
+              <div class="kw-desc">「倫理的な消費」のこと。ただ安いから買うのではなく、「誰がどんな環境で作ったか」「環境に悪くないか」まで考えて買うこと。</div>
+            </div>
+            <span class="kw-badge-used">令和5出題</span>
+          </div>
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">フードロス <span class="kw-eng">Food Loss</span></div>
+              <div class="kw-desc">まだ食べられるのに捨てられる食品のこと。日本では年間約500万トン（国民一人ひとりが毎日茶碗1杯分捨てている計算）。</div>
+            </div>
+          </div>
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">ファストファッション <span class="kw-eng">Fast Fashion</span></div>
+              <div class="kw-desc">流行に合わせて大量生産・低価格・短期間で使い捨てられる衣料品のこと。安さの裏に、劣悪な労働環境や大量廃棄という問題がある。</div>
+            </div>
+          </div>
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">フェアトレード <span class="kw-eng">Fair Trade</span></div>
+              <div class="kw-desc">発展途上国の農家や職人が正当な対価を得られるよう、公正な条件で取引する仕組み。コーヒー・チョコレートなどが代表例。</div>
+            </div>
+          </div>
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">カーボンニュートラル <span class="kw-eng">Carbon Neutral</span></div>
+              <div class="kw-desc">CO₂などの温室効果ガスの排出量を実質ゼロにすること。日本は2050年までにこれを目指すと宣言している。</div>
+            </div>
+          </div>
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">SDGs <span class="kw-eng">Sustainable Development Goals</span></div>
+              <div class="kw-desc">国連が決めた「2030年までに世界が達成すべき17の目標」。「誰一人取り残さない」がキャッチフレーズ。貧困・環境・平等など幅広い問題が含まれる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">大量生産・大量消費・大量廃棄</div>
+              <div class="kw-desc">20世紀に広まった「たくさん作って・たくさん使って・たくさん捨てる」という社会のあり方。現代の環境問題の根本として批判的に論じられる。</div>
+            </div>
+            <span class="kw-badge-used">令和5出題</span>
+          </div>
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">生物多様性 <span class="kw-eng">Biodiversity</span></div>
+              <div class="kw-desc">地球上に多様な生き物が存在すること、その多様さそのものに価値があるという考え方。はずれ者が進化をもたらすテーマと重なる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">グローバルサプライチェーン <span class="kw-eng">Global Supply Chain</span></div>
+              <div class="kw-desc">一つの商品が「原材料の採取→製造→輸送→販売」されるまでの流れが、世界中の国をまたいでつながっている仕組みのこと。</div>
+            </div>
+          </div>
+
+          <div class="kw-item env">
+            <div>
+              <div class="kw-word">再生可能エネルギー <span class="kw-eng">Renewable Energy</span></div>
+              <div class="kw-desc">太陽光・風力・水力など、自然の力を使って繰り返し生み出せるエネルギーのこと。石油や石炭（化石燃料）の代わりとして注目されている。</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 人間・社会・多様性 -->
+      <div class="kw-section">
+        <div class="kw-section-head">
+          <div class="kw-icon" style="background:rgba(106,74,138,.1)">🧠</div>
+          <div class="kw-section-title">人間・社会・多様性</div>
+        </div>
+        <div class="kw-list">
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">多様性（ダイバーシティ） <span class="kw-eng">Diversity</span></div>
+              <div class="kw-desc">年齢・性別・国籍・考え方など、様々な違いを持つ人々が共存すること。「違い＝弱さ」ではなく「違い＝強み」として評価する視点。</div>
+            </div>
+            <span class="kw-badge-used">令和4出題</span>
+          </div>
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">インクルージョン <span class="kw-eng">Inclusion</span></div>
+              <div class="kw-desc">「誰一人排除しない社会」のこと。ダイバーシティ（多様性）を受け入れて、全員が活躍できる仕組みを作ること。</div>
+            </div>
+          </div>
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">アイデンティティ <span class="kw-eng">Identity</span></div>
+              <div class="kw-desc">「自分とは何者か」という感覚のこと。「自己同一性」とも言う。思春期に「本当の自分はどこにいるか」という問いとして現れやすい。</div>
+            </div>
+          </div>
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">ジェンダー・固定観念（ステレオタイプ） <span class="kw-eng">Gender Stereotype</span></div>
+              <div class="kw-desc">「男だから〇〇すべき」「女だから〇〇が好き」などの思い込みのこと。性別に関係なく個人として見ることが大切だという論旨でよく使われる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">自己肯定感 <span class="kw-eng">Self-esteem</span></div>
+              <div class="kw-desc">「ありのままの自分でいい」と思える感覚のこと。失敗しても立ち直れる力の源になるとされる。日本の若者は国際比較で低いと言われている。</div>
+            </div>
+          </div>
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">承認欲求 <span class="kw-eng">Need for Recognition</span></div>
+              <div class="kw-desc">他の人に「認められたい・ほめられたい・見てほしい」という気持ち。SNSの「いいね」と深く結びついている。</div>
+            </div>
+          </div>
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">孤立・孤独 <span class="kw-eng">Isolation / Loneliness</span></div>
+              <div class="kw-desc">孤立＝客観的に一人でいる状態。孤独＝主観的につながりを感じられない状態。SNS時代でも「スマホを持っていても孤独」という現象が問われる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">コミュニティ <span class="kw-eng">Community</span></div>
+              <div class="kw-desc">人々がつながって生活する集まりのこと。家族・学校・地域など。コロナ禍以降「リアルのコミュニティが失われた」という論点がよく登場する。</div>
+            </div>
+          </div>
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">マイノリティ <span class="kw-eng">Minority</span></div>
+              <div class="kw-desc">社会の中で少数派にあたる人々のこと。障がい者・LGBTQ+・外国人など。「多数派の常識」が無意識に少数派を排除することへの問い直しとして使われる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item human">
+            <div>
+              <div class="kw-word">LGBTQ+ <span class="kw-eng">Sexual/Gender Minority</span></div>
+              <div class="kw-desc">レズビアン・ゲイ・バイセクシュアル・トランスジェンダー・クエスチョニングなど、性のあり方の多様性を表す言葉。性別の固定観念を問う論説文と一緒に登場することが多い。</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 科学・思考・知識 -->
+      <div class="kw-section">
+        <div class="kw-section-head">
+          <div class="kw-icon" style="background:rgba(198,154,32,.1)">🔬</div>
+          <div class="kw-section-title">科学・思考・知識</div>
+        </div>
+        <div class="kw-list">
+
+          <div class="kw-item sci">
+            <div>
+              <div class="kw-word">批判的思考（クリティカルシンキング） <span class="kw-eng">Critical Thinking</span></div>
+              <div class="kw-desc">「本当にそうか？」「なぜそう言えるか？」と問い直す考え方のこと。批判＝悪口ではなく「根拠を確認する」という意味。論説文の筆者はほぼ全員これをやっている。</div>
+            </div>
+          </div>
+
+          <div class="kw-item sci">
+            <div>
+              <div class="kw-word">相関と因果</div>
+              <div class="kw-desc">「一緒に変化する（相関）」ことと「原因と結果の関係（因果）」は違う。例：「アイスがよく売れる日は水難事故が多い」→原因は暑さであり、アイスが水難事故を引き起こすわけではない。</div>
+            </div>
+          </div>
+
+          <div class="kw-item sci">
+            <div>
+              <div class="kw-word">エビデンス <span class="kw-eng">Evidence</span></div>
+              <div class="kw-desc">「証拠・根拠」のこと。「なんとなくそう思う」ではなく「データや研究結果に基づいて言える」という状態。記述問題で「根拠を書きなさい」と言われるときのエビデンスのこと。</div>
+            </div>
+          </div>
+
+          <div class="kw-item sci">
+            <div>
+              <div class="kw-word">仮説と検証 <span class="kw-eng">Hypothesis & Verification</span></div>
+              <div class="kw-desc">「こうではないか」と予測を立て（仮説）、実際に試して確かめること（検証）。科学の基本的な考え方で、「思い込みではなく確かめる」姿勢の大切さを論じるときに登場する。</div>
+            </div>
+          </div>
+
+          <div class="kw-item sci">
+            <div>
+              <div class="kw-word">データリテラシー <span class="kw-eng">Data Literacy</span></div>
+              <div class="kw-desc">グラフや数字を正しく読み解く力のこと。「数字があれば正しい」は危険で、「どのデータを・どう使っているか」を見抜く力が必要。</div>
+            </div>
+          </div>
+
+          <div class="kw-item sci">
+            <div>
+              <div class="kw-word">常識の問い直し</div>
+              <div class="kw-desc">「みんなが当たり前だと思っていること」に「本当にそうか？」と疑問を持つこと。ナイチンゲールの話（令和6年）はこの典型例。論説文の筆者の多くがこれをやっている。</div>
+            </div>
+            <span class="kw-badge-used">令和6出題</span>
+          </div>
+
+          <div class="kw-item sci">
+            <div>
+              <div class="kw-word">パラダイムシフト <span class="kw-eng">Paradigm Shift</span></div>
+              <div class="kw-desc">「考え方・見方の大転換」のこと。「地球は宇宙の中心」→「地球は太陽の周りを回っている」のような、それまでの常識がひっくり返るほどの変化を指す。</div>
+            </div>
+          </div>
+
+          <div class="kw-item sci">
+            <div>
+              <div class="kw-word">バイアス <span class="kw-eng">Bias</span></div>
+              <div class="kw-desc">「思い込み・偏り」のこと。「女性は理系が苦手」「外国人は〇〇だ」などの思い込みが判断を歪めること。「アンコンシャスバイアス（無意識の偏見）」とも言われる。</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- コミュニケーション・言語・表現 -->
+      <div class="kw-section">
+        <div class="kw-section-head">
+          <div class="kw-icon" style="background:rgba(194,90,58,.1)">💬</div>
+          <div class="kw-section-title">コミュニケーション・言語・表現</div>
+        </div>
+        <div class="kw-list">
+
+          <div class="kw-item comm">
+            <div>
+              <div class="kw-word">非言語コミュニケーション</div>
+              <div class="kw-desc">言葉を使わない伝え方のこと。表情・声のトーン・身振り・間の取り方など。「台所のおと」（令和7年）は音だけで気持ちを伝えるまさにこれ。</div>
+            </div>
+            <span class="kw-badge-used">令和7出題</span>
+          </div>
+
+          <div class="kw-item comm">
+            <div>
+              <div class="kw-word">本音と建前</div>
+              <div class="kw-desc">「本音」は本当の気持ち、「建前」は表向きの言葉・態度のこと。「孫係」（令和6年）のおじいちゃんの言葉のように、日本語の会話では両方が同時に使われる。</div>
+            </div>
+            <span class="kw-badge-used">令和6出題</span>
+          </div>
+
+          <div class="kw-item comm">
+            <div>
+              <div class="kw-word">言葉の多義性</div>
+              <div class="kw-desc">同じ言葉でも、文脈・場面によって意味が変わること。「春や春」（令和4年）で「友」という一語が持つ重みがテーマになったのがこれ。</div>
+            </div>
+            <span class="kw-badge-used">令和4出題</span>
+          </div>
+
+          <div class="kw-item comm">
+            <div>
+              <div class="kw-word">メタファー（比喩） <span class="kw-eng">Metaphor</span></div>
+              <div class="kw-desc">「人生は旅だ」「心が凍りついた」のように、別のものに例えて表現すること。論説文で筆者が主張を分かりやすく説明するために使い、「この比喩は何を表しているか」という問題になることがある。</div>
+            </div>
+          </div>
+
+          <div class="kw-item comm">
+            <div>
+              <div class="kw-word">対話・議論 <span class="kw-eng">Dialogue / Discussion</span></div>
+              <div class="kw-desc">一方的に話すのではなく、お互いの考えを出し合って理解を深めること。「議論と口げんかは違う」「対話は相手を理解しようとすることから始まる」という論点で登場する。</div>
+            </div>
+          </div>
+
+          <div class="kw-item comm">
+            <div>
+              <div class="kw-word">沈黙の意味</div>
+              <div class="kw-desc">「何も言わない」ことも一つのメッセージであること。日本語では「察する」文化があり、言葉を使わないことが「優しさ」「遠慮」「拒絶」などを意味する場合がある。小説問題で問われやすい。</div>
+            </div>
+          </div>
+
+          <div class="kw-item comm">
+            <div>
+              <div class="kw-word">エコーチェンバー <span class="kw-eng">Echo Chamber</span></div>
+              <div class="kw-desc">SNSなどで、自分と同じ意見の人とだけつながるようになり、その意見がどんどん強化されていく現象。「こだまが返ってくる部屋」のイメージ。フィルターバブルと似た概念。</div>
+            </div>
+          </div>
+
+          <div class="kw-item comm">
+            <div>
+              <div class="kw-word">翻訳できない言葉</div>
+              <div class="kw-desc">「木漏れ日」「わびさび」「もったいない」のように、他の言語に訳せない日本語の概念のこと。言語と文化の深いつながりの証拠として論説文に登場する。</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 文化・芸術・創造 -->
+      <div class="kw-section">
+        <div class="kw-section-head">
+          <div class="kw-icon" style="background:rgba(106,74,138,.08)">🎨</div>
+          <div class="kw-section-title">文化・芸術・創造</div>
+        </div>
+        <div class="kw-list">
+
+          <div class="kw-item" style="border-left-color:var(--grape)">
+            <div>
+              <div class="kw-word">効率に還元できないものの価値</div>
+              <div class="kw-desc">時間がかかる・すぐ役に立たない・数値化できない——でも大切なもの。芸術・手仕事・読書・遊びなどがこれに当たる。「タイパ・コスパ」重視への対抗軸として論じられる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--grape)">
+            <div>
+              <div class="kw-word">身体知・暗黙知 <span class="kw-eng">Tacit Knowledge</span></div>
+              <div class="kw-desc">言葉や説明書では伝えられない「体で覚えた知識」のこと。自転車の乗り方・料理の感覚・職人の技など。AIやマニュアルに置き換えられない人間の知恵として論じられる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--grape)">
+            <div>
+              <div class="kw-word">無形文化財・伝統文化</div>
+              <div class="kw-desc">形には残らない、人から人へと受け継がれてきた技術・芸能・習慣のこと。琉球舞踊・沖縄の方言（うちなーぐち）なども含まれる。「失われていく文化をどう守るか」という問いで登場する。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--grape)">
+            <div>
+              <div class="kw-word">オリジナリティと模倣 <span class="kw-eng">Originality & Imitation</span></div>
+              <div class="kw-desc">「真似することから創造は始まる」という考え方。また、AIが生み出す作品は本当に「オリジナル」か、という問いとも重なる。「創造性とは何か」を論じる文章でよく登場する。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--grape)">
+            <div>
+              <div class="kw-word">芸術の役割</div>
+              <div class="kw-desc">芸術は「役に立つ」ものなのか、という問い。「役に立たなくてもいい、心を動かすことに意味がある」という立場と「社会を変える力がある」という立場が対比で論じられる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--grape)">
+            <div>
+              <div class="kw-word">標準化 vs 個性</div>
+              <div class="kw-desc">「みんな同じにそろえる（標準化）」ことと「それぞれが違っていい（個性）」ことの対立。学校教育・製品づくり・社会の仕組みなど幅広い場面で論じられる。多様性テーマと直結。</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 身体・感覚・経験 -->
+      <div class="kw-section">
+        <div class="kw-section-head">
+          <div class="kw-icon" style="background:rgba(58,122,88,.08)">🌿</div>
+          <div class="kw-section-title">身体・感覚・直接体験</div>
+        </div>
+        <div class="kw-list">
+
+          <div class="kw-item" style="border-left-color:var(--jade)">
+            <div>
+              <div class="kw-word">直接体験 vs 間接体験</div>
+              <div class="kw-desc">実際にやってみる（直接体験）と、画像・動画・話で知る（間接体験）の違い。「本を読んで知っている」と「実際に行って感じた」は別物という論旨でよく登場する。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--jade)">
+            <div>
+              <div class="kw-word">五感 <span class="kw-eng">Five Senses</span></div>
+              <div class="kw-desc">見る・聞く・嗅ぐ・味わう・触れる、の5つの感覚のこと。「台所のおと」（令和7年）は「聴覚」で気持ちを読む作品。デジタル体験では五感が限られるという論点で登場する。</div>
+            </div>
+            <span class="kw-badge-used">令和7出題</span>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--jade)">
+            <div>
+              <div class="kw-word">読書の体験</div>
+              <div class="kw-desc">本を読むことは「他人の頭の中で考える」体験だという見方がある。動画や要約とは違い、じっくり言葉と向き合うことで生まれる想像力・共感力・思考力のこと。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--jade)">
+            <div>
+              <div class="kw-word">自然との関わり</div>
+              <div class="kw-desc">都市化が進む中で、人間が自然から切り離されていくことへの問い。「自然の中で感じる時間・季節・命」という感覚の大切さ。沖縄の豊かな自然環境とも重なるテーマ。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--jade)">
+            <div>
+              <div class="kw-word">スローライフ・ゆとり</div>
+              <div class="kw-desc">タイパ・効率化への反省から生まれた考え方。「急がない・遠回りする・余白を持つ」ことの価値を見直す動き。「速さが正しい」という前提を問い直す論旨で登場する。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--jade)">
+            <div>
+              <div class="kw-word">当事者性 <span class="kw-eng">Involvement</span></div>
+              <div class="kw-desc">「自分ごとにする」ということ。環境問題や社会問題を「他人事ではなく自分に関係する問題」として受け取ること。論説文の締めくくりに「あなた自身はどうするか」という問いかけでよく使われる。</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- グローバル・社会変化 -->
+      <div class="kw-section">
+        <div class="kw-section-head">
+          <div class="kw-icon" style="background:rgba(26,95,122,.08)">🌐</div>
+          <div class="kw-section-title">グローバル化・社会の変化</div>
+        </div>
+        <div class="kw-list">
+
+          <div class="kw-item" style="border-left-color:var(--ocean)">
+            <div>
+              <div class="kw-word">グローバル化 <span class="kw-eng">Globalization</span></div>
+              <div class="kw-desc">ヒト・モノ・お金・情報が国境を越えて行き来するようになること。「世界がつながった」ことのメリット（交流・発展）とデメリット（格差・文化の均質化）が対比で論じられる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--ocean)">
+            <div>
+              <div class="kw-word">ローカル・地域性 <span class="kw-eng">Local Identity</span></div>
+              <div class="kw-desc">グローバル化の対になる概念。「どこにいても同じ」ではなく「ここにしかない」ものの価値。沖縄の文化・言葉・食・自然はまさにこれ。「地産地消」もここに含まれる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--ocean)">
+            <div>
+              <div class="kw-word">イノベーション <span class="kw-eng">Innovation</span></div>
+              <div class="kw-desc">ただの「発明」ではなく、社会の仕組み・価値観・やり方を根本から変えること。「当たり前のひっくり返し」（令和6年）はまさにイノベーションの話。</div>
+            </div>
+            <span class="kw-badge-used">令和6出題</span>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--ocean)">
+            <div>
+              <div class="kw-word">少子高齢化</div>
+              <div class="kw-desc">子どもが減り（少子）、高齢者が増える（高齢化）社会現象のこと。労働力不足・社会保障の問題など、日本社会の根本的な課題として様々なテーマと絡んで登場する。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--ocean)">
+            <div>
+              <div class="kw-word">格差社会 <span class="kw-eng">Gap Society</span></div>
+              <div class="kw-desc">お金持ちと貧しい人の差が広がっていく社会のこと。「生まれた家庭によって将来が決まる」という問題意識。教育・機会・情報格差などとセットで論じられる。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--ocean)">
+            <div>
+              <div class="kw-word">移民・多文化共生</div>
+              <div class="kw-desc">異なる文化・言語・習慣を持つ人々が同じ社会で共に生きること。「違いを受け入れる」ことの難しさと大切さ。日本でも外国人労働者・留学生の増加で現実の問題になっている。</div>
+            </div>
+          </div>
+
+          <div class="kw-item" style="border-left-color:var(--ocean)">
+            <div>
+              <div class="kw-word">ウェルビーイング <span class="kw-eng">Well-being</span></div>
+              <div class="kw-desc">お金や成功だけでなく、「心も体も社会的にも満たされた状態」のこと。GDP（国の豊かさの指標）では測れない幸せのあり方として、近年注目されているキーワード。</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="c-divider">
+
+  <!-- メッセージ -->
+  <div class="message-box">
+    <div class="msg-label">現代のテーマを読む前に</div>
+    <div class="msg-title">テーマを知ることは、<br>「地図を持って読む」ことです</div>
+    <div class="msg-body">
+      論説文が難しく感じる理由の一つは、「全部が初めての話」に見えるからです。でも、テーマを知っておくと「あ、これはSDGsの話だ」「これは多様性の話だ」と気づいた瞬間に、文章の地図が見えます。<br><br>
+      テーマの内容を全部暗記する必要はありません。「どんな話題があるか」「どんな言葉が出てくるか」を頭の片隅に置いておくだけで、初めて読む文章が10倍読みやすくなります。<br><br>
+      論説文はいつも「今の社会を、どう考えるか」という話をしています。あなた自身が今生きているこの社会の話です。
+    </div>
+  </div>
+
+</div><!-- /theme-page -->
+
+<!-- DATA -->
+<script id="D" type="application/json">
+[
+  {
+    "i": 1,
+    "c": "story",
+    "year": "令和7",
+    "t": "台所のおと",
+    "o": "幸田文",
+    "st": "「佐吉」という人が、台所から聞こえてくる音に耳をかたむける物語。水の音、まな板の音、包丁の音——その音の大きさやリズムで、台所にいる女性の気持ちがわかる。音を通して人の内側を読む、という細かい視点が特徴の作品。",
+    "reason": "国語の問題で一番よく出るのは「登場人物の気持ちを読み取りなさい」という問いです。でもこの作品、「悲しかった」とか「怒っていた」とか、気持ちを直接書いてくれていない。その代わりに「台所の音が荒くなった」「包丁の音が乱暴になった」という書き方で気持ちを表現しています。\n\n「直接書いていない気持ちを、音の書き方から読み取れるか」——これを試したくて、出題者はこの作品を選びました。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　音の書き方から気持ちを読む",
+        "a": "台所の音の様子（荒い・静か・止まる）が、登場人物のどんな気持ちを表しているかを答える問題です。「この音はどんな気持ちのサインか」を読み取る力が問われています。",
+        "why": "小説の中で、気持ちはよく「音」「行動」「表情」などに隠れています。「悲しい」と書くかわりに「包丁の音が乱暴になった」と書く——この書き方を読み解く力が、すべての小説問題の基本です。"
+      },
+      {
+        "q": "この問題で問われていること②　佐吉はなぜ音を聴くのか",
+        "a": "佐吉がわざわざ台所の音に耳をかたむける理由を、本文の言葉をもとに答える問題です。「なんとなく」ではなく、佐吉がその人のことを気にかけているからこそ聴いている——そういう人物だと読み取れるかが問われています。",
+        "why": "「なぜその行動をとるのか」を問う問題は、入試でとてもよく出ます。自分の想像で答えるのではなく、「本文のここからわかる」という形で答えることが大切です。"
+      },
+      {
+        "q": "この問題で問われていること③　書かれていない気持ちを言葉にする",
+        "a": "台所にいる女性の気持ちは、本文に直接書かれていません。音の書き方だけをもとに「〜という書き方から、〜という気持ちが読み取れる」という形で説明できるかが問われます。",
+        "why": "「気持ちを答えなさい」という問題で「悲しいと思いました」と書くだけでは点がもらえません。「〇〇という書き方から〜という気持ちがわかる」という形で、理由と一緒に答えることが必要です。これが「感想」と「読解」の違いです。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "気持ちを問う問題の答え方",
+        "body": "気持ちを答えるときは、<strong>「気持ちの言葉」と「本文のどこからそうわかるか（理由）」をセットで書く</strong>ことが基本です。理由なしで「悲しい」と書くだけでは点になりません。",
+        "example": "ダメな答え：「悲しかった」\n良い答え：「〇〇という書き方から、悲しんでいることが読み取れる」\n\n気持ちのサインになりやすい書き方の例：\n・「茶碗をそっと置いた」→ 緊張している・気を遣っている\n・「バタンとドアを閉めた」→ 怒っている・傷ついている\n・「水の音が止まった」→ 何かに気づいて動きが止まるほどの感情"
+      },
+      {
+        "type": "「なぜ？」を問う問題の答え方",
+        "body": "「〜なのはなぜか」という問いには、<strong>必ず本文の中から理由を探して書く</strong>ことが必要です。自分の想像で書くと、どんなに正しそうでも点になりません。",
+        "example": "ダメな答え：「気になったから」\n良い答え：「本文の〇〇という部分から、〜ということがわかるため」"
+      }
+    ],
+    "key": "「音は気持ちの鏡」——これがこの作品の核心です。台所から聞こえる音のリズムや大きさで、そこにいる人の気持ちがわかる。佐吉はそれを静かに聴き取る人として描かれています。\n\n読むときに意識してほしいのは「比べること」です。音が乱れる場面と、静かな場面を比べることで、気持ちの変化が見えてきます。入試では「最初と後でどう変わったか」を聞く問題がとても多いです。変化の前と後を比べる読み方が、どんな小説にも使えます。",
+    "deep": "「読解力」というのは、実は「人の気持ちを理解する力」と同じです。「なぜこの人はこういう行動をとるのか」「この言葉の裏に何があるのか」——それを考える力が、国語の力でもあり、友達や家族との関係でも使える力です。\n\n台所の音に耳をかたむける佐吉のように、人の「言葉じゃないところ」に気づける人は、相手のことを深く感じ取れる人です。読解の力と、人を理解する力は、同じものです。"
+  },
+  {
+    "i": 2,
+    "c": "essay",
+    "year": "令和7",
+    "t": "映画を早送りで観る人たち",
+    "o": "稲田豊史",
+    "st": "映画やドラマを倍速や10秒飛ばしで観る若者が増えている現象を分析した評論。「タイパ（タイムパフォーマンス）」——時間をなるべく無駄にしたくない——という考え方や、「快適主義の視聴者」「ラノベ同様に自分が想定した展開を見たい」という行動の背景を掘り下げる。また、ドキドキするのが好きではない・ミステリーが苦手という「共感性羞恥」と関わる心理まで論じる。脚本家志望の若者がオリジナルシナリオを書かない理由として登場する事例も含む。「若者を批判する」のではなく、「なぜそうなるのか」の背景を丁寧に分析した評論。",
+    "reason": "「映画を早送りで観る」——これ、あなたもやったことがあるかもしれません。YouTubeを1.5倍速で見たり、アニメを飛ばし飛ばしで見たり。この本は、そういう「自分のこと」として読めるテーマです。\n\n入試の出題者が選ぶのは「中学生が自分の生活と結びつけて読める」テーマです。出題箇所では「快適主義」「共感性羞恥」「タイパ」という言葉の意味を本文の中で正確につかみながら、筆者がこの現象をどう分析しているかを読む力が問われました。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　「快適主義の視聴者」「共感性羞恥」などのキーワードの意味を本文から正確に読む",
+        "a": "「快適主義の視聴者」「共感性羞恥」「タイパ」などの言葉が、この文章でどういう意味・考え方として使われているかを答える問題です。辞書的な意味だけでなく「本文の中での定義」を正確に読み取れるかが問われます。",
+        "why": "評論文には必ず「この文章の中で大事な言葉の意味」があります。辞書的な意味だけでなく「この文章の中ではどういう意味で使われているか」を本文から探して答える力が問われています。こうした言葉は問題文に定義が書かれているので、必ずその説明に沿って答えることが大切です。"
+      },
+      {
+        "q": "この問題で問われていること②　脚本家志望の若者の話が何のために書かれているかを読む",
+        "a": "「脚本家志望なのにオリジナルシナリオを書かない」という若者の話が、筆者の「商業作品が山ほどある世の中で観客を快楽で満たすのが目的の時代」という主張のどの部分を説明するために書かれているかを読む問題です。「事例が何の証拠として使われているか」を読み取れるかが問われます。",
+        "why": "評論文に具体的な話（事例）が出てきたら「これは何のために書かれているか」を問う習慣をつけましょう。事例は必ず「言いたいことの証拠・説明」として書かれています。「この話＝この主張の証明」という対応を読む力が試されています。"
+      },
+      {
+        "q": "この問題で問われていること③　筆者の立場を正確につかむ",
+        "a": "筆者が倍速視聴を「批判しているのか」「賛成しているのか」「分析しているだけなのか」を正確に読み取れるかが問われます。「そうせざるを得ない社会の背景がある」という筆者のスタンスをつかめるかが鍵です。",
+        "why": "評論文を読むとき、まず「筆者はこのテーマに対してどういう立場か」を確認することが大切です。これをまちがえると、設問の答えが全部ずれます。「しかし」「だが」「一方で」という言葉の前後に、筆者の立場がよく現れます。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "評論文のキーワードを本文から正確につかむ",
+        "body": "評論文には「この文章の中での重要な言葉の定義」が必ず出てきます。<strong>はじめてその言葉が出てきた場所・説明されている場所に線を引いておく</strong>と、問題を解くときに見つけやすくなります。",
+        "example": "読む手順：\n①初めて出てきた言葉に〇をつける\n②その言葉が「文章の中でどう説明されているか」を探す\n③答えるときは「本文では〇〇と説明されている」という形で書く"
+      },
+      {
+        "type": "筆者の「立場」を最初につかむ",
+        "body": "評論文を読んだら、まず<strong>「筆者はこのテーマに賛成？反対？それとも分析してるだけ？」</strong>を確認しましょう。この確認をしないまま問題に入ると、答えの方向がずれます。",
+        "example": "この文章の場合：\n「倍速視聴は悪い」（批判）ではない\n「倍速視聴は合理的」（賛成）でもない\n→「そうせざるを得ない社会の背景がある」（分析・考察）\nこの立場を最初につかめると、全部の問いに安定して答えられます。"
+      }
+    ],
+    "key": "「快楽のために全精力を注いだ商業作品を、観客が快楽を満たすことに全精力を注いで消費する」——これがこの評論の核心の一つです。「心を揺さぶられたくない」「自分が想定した展開だけを見たい」という視聴者の登場は、映画やドラマの「観られ方」だけでなく「作られ方」まで変えつつある。\n\n筆者は倍速視聴を批判しているのではなく、「そうなる理由」を丁寧に解き明かしています。この文章の核心は「この現象の背後に何があるか」を読む力——その力が問われました。「しかし」「だが」「一方で」という言葉の前後に注目して読むと、筆者の立場が見えてきます。",
+    "deep": "映画やアニメを早送りで観たことはありますか？YouTubeを1.5倍速で見ることはありますか？\n\nこの評論が問いかけているのは「効率と体験、どちらを選ぶか」です。早送りすれば時間は節約できます。でも、じっくり観たときにしか気づけない「何か」がこぼれ落ちているかもしれない。その「何か」を言葉にできるかどうかが、あなたの読解力の深さとつながっています。じっくり受け取る体験は、情報を処理する力とは別の力を育てます。"
+  },
+  {
+    "i": 3,
+    "c": "story",
+    "year": "令和6",
+    "t": "孫係",
+    "o": "西加奈子",
+    "st": "孫娘のすみれと、祖父（おじいちゃん）をめぐる物語。すみれはおじいちゃんの「さくらちゃん（祖父の友人の子ども）への対応」をめぐって、思いやりとは何かを考える場面が出題された。おじいちゃんは口が悪く「性格が悪い」とも見えるが、その奥に深い愛情・思いやりが隠れている。「人を騙してでも得をしようとする」「思いやりには義務も含まれる」という言葉が登場し、表面の言葉と本当の気持ちのズレを読む力が問われた作品。",
+    "reason": "家族の間での会話って、本音をそのまま言わないことが多いですよね。照れくさかったり、意地を張ったり。この物語は「言葉の表の意味」と「本当の気持ち」がずれている場面がたくさん出てきます。\n\n「表に出ている言葉」と「その裏にある気持ち」を読み取る力——これが国語で一番問われる力です。そのスキルを試すのに、この作品はぴったりでした。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　言葉と本音のズレを読む",
+        "a": "登場人物が言った言葉の表面の意味と、その裏にある本当の気持ちのズレを読み取る問題です。「この言葉、本当はどういう気持ちから出てきたのか」を、人物の立場と状況から考えられるかが問われます。",
+        "why": "人間は本音をそのまま言葉にしないことが多いです。特に家族の間では「照れ」「意地」「遠慮」で反対のことを言ってしまうことがある。「言葉の裏を読む」力は、小説読解で一番大事なスキルです。"
+      },
+      {
+        "q": "この問題で問われていること②　おじいちゃんの言葉の裏にある「思いやり」を読む",
+        "a": "おじいちゃんが「人を騙して得をしようとする」「思いやりには義務も含まれる」と言うが、その言葉が実は「本当の思いやりとは何か」を伝えようとしていることを読み取る問題です。表面の言葉と、その奥にある意図を区別して読めるかが問われます。",
+        "why": "「言葉の表の意味と奥の意味が違う」という構造は、入試でよく問われるパターンです。特に家族間の会話では「照れや遠慮で本音が出にくい」ことが多く、表面だけ読むと全く別の気持ちに見えることがあります。"
+      },
+      {
+        "q": "この問題で問われていること③　物語の「変化」を追う",
+        "a": "物語の中で孫娘の気持ちや、おじいちゃんとの関係がどう変わったかを、具体的な場面と結びつけて答える問題です。",
+        "why": "小説は必ず「何かが変わる」物語です。「最初はこうだったが、〇〇をきっかけに、こう変わった」という流れを追う読み方が、物語読解の基本です。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "気持ちを問う問題の答え方",
+        "body": "気持ちを答えるときは、<strong>「気持ちの言葉＋本文のどこからそうわかるか（理由）」をセットで書く</strong>ことが必要です。",
+        "example": "採点される答えの形：\n「（登場人物）は（気持ち）という気持ちである。なぜなら、（本文の言葉や場面）から（理由）がわかるから。」"
+      },
+      {
+        "type": "「変化」を問う問題の答え方",
+        "body": "「最初と後で何が変わったか」という問いには、<strong>「変化前」「きっかけ」「変化後」の三つ</strong>を答えます。",
+        "example": "答えの形：\n「最初は（状態A）だったが、（きっかけとなる出来事）をきっかけに、（状態B）に変わった。」\nこの三つが揃うと、完全な答えになります。"
+      }
+    ],
+    "key": "「家族は、言葉にしないことで伝える」——これがこの物語の核心です。おじいちゃんの言葉は一見「性格が悪い」ように聞こえる。でも出題された場面でおじいちゃんが言っていることの奥には、「本当の思いやりとは何か」「相手のために我慢させることは思いやりではない」という深い考えが詰まっています。\n\n「言葉の意味を表面だけで読まない」という読み方が、この作品を通して身につく核心のスキルです。登場人物の言葉の「意図」——なぜその言葉を選んだか——を考えることで、人物像が立体的に見えてきます。",
+    "deep": "家族と話すのが難しいと感じることはありますか？言いたいことが言えない、わかってもらえない——そういう経験は、相手も同じように感じていることがあります。\n\n完璧に伝わらなくても、一緒にいる。その事実が、言葉以上のことを語っています。この物語の孫娘とおじいちゃんも、「言えないこと」を抱えたまま同じ食卓に座っています。それでも続く関係が「家族」です。"
+  },
+  {
+    "i": 4,
+    "c": "essay",
+    "year": "令和6",
+    "t": "ミライの授業",
+    "o": "滝本哲史",
+    "st": "「世界を変えた偉人たちは、みな『おかしいな』という違和感から旅を始めた」という視点で書かれた本。出題箇所はナイチンゲールの章。「みなさんはナイチンゲールと聞いてどんな女性をイメージしますか？」という問いかけから始まる。世間のイメージは「戦場の天使＝やさしい看護師」。しかし本当のナイチンゲールは、「兵士は戦闘ではなく感染症で死んでいる」というデータを集め、独自のグラフで視覚化し、政府・委員会を動かして病院環境を改善した人物として描かれる。クリミア戦争の死者数や死因別データを棒グラフや円グラフにして見せ、統計学者・社会改革者として活躍した姿を、中学生に向けて書かれた本の中で紹介している。",
+    "reason": "「みんなが知っているイメージ（ナイチンゲール＝やさしい看護師）を、根拠をもってひっくり返す」という論の進め方は、評論文の最もよく出るパターンです。「AではなくBだ」という対比の構造がはっきりしていて、「筆者が否定していること」と「筆者が言いたいこと」を区別して読む練習になります。\n\nナイチンゲールが「感情ではなくデータで相手を動かした」という話は、入試の記述問題で「理由を示して答える」という姿勢とぴったり重なります。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　「イメージのひっくり返し」を読む",
+        "a": "筆者がナイチンゲールについて「世間のイメージ（やさしい看護師）」を否定し、「本当の姿（データを使って政府を動かした人）」を示すという流れを整理できるかが問われます。「筆者が否定していること」と「筆者が言いたいこと」を区別して読めるかが鍵です。",
+        "why": "評論文のよく出るパターンが「AではなくBだ」という対比の構造です。「〜ではなく」「しかし」「だが」という言葉の前後に注目すると、筆者が否定していることと言いたいことが見えてきます。"
+      },
+      {
+        "q": "この問題で問われていること②　「おかしいな→調べた→こうなった」の流れを読む",
+        "a": "ナイチンゲールが「おかしいな（違和感）」→「データで調べた（行動）」→「病院の環境が改善された（結果）」という流れを整理して説明できるかが問われます。",
+        "why": "評論文の事例は「なぜ・どうした・どうなった」という流れで整理すると理解しやすくなります。この流れをつかめると、「なぜか」「どうしたか」という設問すべてに答えやすくなります。"
+      },
+      {
+        "q": "この問題で問われていること③　筆者が中学生に伝えたいことを読む",
+        "a": "筆者がナイチンゲールの話を通して中学生に伝えたいメッセージ——「『おかしいな』という感覚こそが世界を変える旅の始まりだ」——を、本文と結びつけて説明できるかが問われます。",
+        "why": "評論文は「筆者が読者に何か伝えたくて書く」ものです。「何を言いたいか」だけでなく「なぜ伝えたいか」まで読めると、より深い読解になります。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "「イメージひっくり返し型」の評論の読み方",
+        "body": "「AではなくBだ」という構造の評論では、<strong>「否定されていること（A）」と「言いたいこと（B）」を表に整理する</strong>とわかりやすくなります。",
+        "example": "整理の例：\n【否定されていること】ナイチンゲール＝やさしい看護師・戦場の天使\n【言いたいこと】ナイチンゲール＝データで政府を動かした社会改革者\nこの対比を整理できると、この評論の問いにほぼ全部答えられます。"
+      },
+      {
+        "type": "「なぜ・どうした・どうなった」で事例を整理する",
+        "body": "評論文に事例が出てきたら、<strong>「きっかけ→行動→結果」の三点を整理する</strong>習慣をつけましょう。",
+        "example": "ナイチンゲールの場合：\nきっかけ：病院が不衛生で感染症で死ぬ人が多い→「戦闘ではなく感染症で死んでいるのでは？」\n行動：死因をデータで分析→グラフにして視覚化した→政府に報告書を提出\n結果：病院の環境が改善→多くの兵士の命が救われた"
+      }
+    ],
+    "key": "「問題を解決する前に、問題を見つけられるかどうか」——これが核心です。ナイチンゲールは「兵士は戦闘で死んでいる」という当たり前を疑い、「実は感染症では？」という「おかしいな」から出発しました。その感覚を「気のせい」にせず、データで確かめ、グラフで見える形にして相手に伝えた——それが世界を変えました。\n\n出題箇所では「ナイチンゲールが感情ではなくデータで政府を動かした」という点が中心です。具体的なグラフの話が出てきたら「これは何の証明のために書かれているか」と考える習慣をつけましょう。",
+    "deep": "「なんかおかしいな」と感じる瞬間を、大切にしてください。それが「違和感」です。ナイチンゲールは「当たり前」に違和感を覚え、データで確かめた。この本が中学生に向けて書かれたのは、「あなたの違和感が世界を変えるかもしれない」というメッセージを届けたかったからです。\n\n勉強中に「なぜそうなるの？」と思う瞬間——それがあなたの違和感です。その「なんで？」を大事にしてください。"
+  },
+  {
+    "i": 5,
+    "c": "story",
+    "year": "令和5",
+    "t": "ファミリーツリー",
+    "o": "小川糸",
+    "st": "穂高で生まれ育った「僕」（流星）と、毎年夏に穂高の親戚の家に来るリリー（半分外国の血を持つ少女）、そして姉の蔦子の三人の物語。出題された場面は、夏に恋路旅館に家族全員で滞在する中で、「僕」とリリー・蔦子の三人が虹を追って自転車で山へ向かう場面（その3）と、田舎と都会の違いの中で「僕」がリリーと蔦子それぞれとの関係で感じる戸惑いや競争心を描く場面（その2）。「僕」がリリーを「きらめきだ」と感じながらも、蔦子との喧嘩・対立も交えて描かれる。",
+    "reason": "出題された場面は「自然の中でしか体験できないことと、都会的な感覚の違い」「リリーと蔦子という対照的な二人の間で揺れる僕」が中心です。\n\n登場人物それぞれの個性と、「僕」の視点からそれぞれの人物をどう捉えているかを読む力が問われました。また自然の描写（虹・蝶・カブトムシ・クワガタ）が場面の雰囲気を作っていることを読み取る力も試されています。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　リリーと蔦子のちがいを「僕」の視点から読む",
+        "a": "リリーは「きらめき」として感じられ、蔦子とは喧嘩・対立もある——この二人を「僕」がどう見ているかの違いを、本文の言葉をもとに整理できるかが問われます。",
+        "why": "「登場人物がどう描き分けられているか」を読む力は小説読解の基本です。「この人物はどんな人として書かれているか」を、本文の具体的な言葉から答える練習になります。"
+      },
+      {
+        "q": "この問題で問われていること②　虹を追う場面で「僕」が感じたことを読む",
+        "a": "リリーが虹を追って自転車を走らせる場面で、「僕」がリリーについていきながら何を感じているかを、その行動や心情の書き方から読み取れるかが問われます。",
+        "why": "「なぜその行動をとるのか」を問う問いは、登場人物の気持ちを行動から読み解く力を試しています。行動の背後にある感情を、本文の描写から根拠を持って答える力が問われています。"
+      },
+      {
+        "q": "この問題で問われていること③　「僕」の気持ちの変化を追う",
+        "a": "その2・その3の場面を通して、「僕」のリリーへの気持ちや、三人の関係への見方がどう変わるかを、具体的な場面と結びつけて答える問題です。",
+        "why": "小説は必ず「何かが変わる」物語です。「最初はこうだったが、〇〇をきっかけに、こう変わった」という流れを追う読み方が、物語読解の基本です。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "「自然描写」と「登場人物の気持ち」のつながりを読む",
+        "body": "小説の中で自然（虹・昆虫・空・風景）の描写が出てきたとき、<strong>「この書き方は登場人物のどんな気持ちと重なっているか」</strong>を考える習慣をつけましょう。自然の描写はしばしば人物の心情を映しています。",
+        "example": "この場面の例：\n・虹が出た → 「きれいだね」と感動するリリーの場面\n→ 「きらめき」というリュウのリリーへの感覚と重なる\n→ 答えるときは「〇〇という自然の書き方が、△△という気持ちを表している」という形で"
+      },
+      {
+        "type": "「人物の対比」を整理する",
+        "body": "二人以上の登場人物が対比的に描かれているとき、<strong>「A（人物1）は〜、B（人物2）は〜」という形で整理する</strong>と答えやすくなります。",
+        "example": "リリーと蔦子の整理例：\nリリー：都会から来た・自然に驚く・きらめいて見える\n蔦子：姉・対立もある・身近な存在\n→「僕はリリーを〇〇と感じ、蔦子とは△△という関係にある」という形で整理できる"
+      }
+    ],
+    "key": "「同じ景色を見ても、感じ方は人によって違う」——これが出題された場面の核心です。穂高育ちの「僕」にとって当たり前の自然が、リリーにとっては「きらめき」になる。その差を「僕」は不思議に思い、憧れを感じる。\n\n蔦子との喧嘩・対立がある一方でリリーには惹かれる——この「身近な人と遠い人への感じ方の違い」が、この場面のリアリティを作っています。自然の描写がその感覚を支えていることを読み取りましょう。",
+    "deep": "「当たり前のことが当たり前じゃなく見える瞬間」——それは、いつも同じ場所にいると気づけないことです。リリーが虹を指さして「すごい！」と言うとき、「僕」は初めて自分の住む場所の豊かさに気づく。\n\nあなたにも、「当たり前すぎて気づいていないすごいもの」がたくさんあるかもしれません。誰かの目を通して見ると、見慣れたものが別の輝きを持って見えることがある——そういう視点の転換が、この物語が伝えたかったことの一つです。"
+  },
+  {
+    "i": 6,
+    "c": "essay",
+    "year": "令和5",
+    "t": "大量廃棄社会",
+    "o": "仲村和代・藤田さつき（＋末吉里花「はじめてのエシカル」）",
+    "st": "二つの文章の比較読解。【文章１】仲村和代・藤田さつき「大量廃棄社会」——刺し子などの東北地方の民芸・手仕事が受け継がれてきた背景と、現代の大量生産・大量廃棄の消費社会との対比。布一枚を何十年も大切に使い続けた先人たちの知恵と、「作り手の顔が見えない」現代の服の流通の問題。【文章２】末吉里花「はじめてのエシカル」——「バーゲンだから」「流行だから」「まとめ買いはお得だから」という消費行動への問いかけ。「エシカル（倫理的な・道徳的な）」消費とは何か——買う前に「本当に必要か」「誰かを傷つけていないか」と一度立ち止まること。「エシカル」はあり・なしではなく、自分の「ものさし（価値基準）」を持つことだという考え方。",
+    "reason": "「服を買う」「流行を追う」——これは中学生でも日常的にやっていることです。「自分の消費が世界とつながっている」というテーマは、読んだ日から自分の行動に直結する問題です。\n\n二つの文章を比較して「どちらが何を大切にしているか」「共通点と違いは何か」を整理する形式は、「複数の情報をまとめて読む力」を試す出題として選ばれました。「エシカル」という言葉の意味をこの文章の中で正確に読む力も問われています。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　「エシカル」の意味を本文の中で正確に読む",
+        "a": "「エシカル（ethical）＝倫理的な・道徳的な」という言葉が、【文章２】ではどんな消費行動のことを指しているかを正確に説明できるかが問われます。辞書の意味だけでなく「この文章でのエシカルの意味」——「自分のものさし（価値基準）を持って、買う前に立ち止まること」——まで読み取れるかが鍵です。",
+        "why": "評論文には必ず「この文章の中での重要な言葉の意味」があります。辞書的な意味だけで答えると点がもらえません。「この文章ではどう説明されているか」を本文から探して使う力が問われています。"
+      },
+      {
+        "q": "この問題で問われていること②　二つの文章の「視点の違い」を整理する",
+        "a": "【文章１】が「作る側・作り手の視点」（手仕事・受け継ぐ・大切に使う）から論じ、【文章２】が「買う側・消費者の視点」（エシカル・ものさし・選ぶ力）から論じていることを整理して、それぞれの立場と共通するメッセージを説明できるかが問われます。",
+        "why": "二つの文章の違いを「視点（誰の立場から論じているか）」で整理すると、それぞれの言いたいことがくっきり見えます。「作る側から見た問題」と「買う側から見た問題」を整理することが、この問題を解く鍵です。"
+      },
+      {
+        "q": "この問題で問われていること③　「ものさし」という言葉の使われ方を読む",
+        "a": "「ものさし」という言葉が【文章２】でどんな意味で使われているかを読み取り、「消費者一人ひとりがものさしを持つことがエシカル消費の第一歩」という筆者の主張の流れを説明できるかが問われます。",
+        "why": "評論文でキーワードが出てきたら「この文章の中での意味」を確認することが基本です。「ものさし＝モノを測る道具」ではなく「何かを判断するときの自分の基準・価値観」という意味で使われていることを読み取る力が問われています。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "「二つの文章の視点の違い」を整理する",
+        "body": "二つの文章を比較する問題では、<strong>「文章１は誰の視点から」「文章２は誰の視点から」を先に確認する</strong>と整理しやすくなります。",
+        "example": "令和5年度の整理：\n【文章１】作る側の視点：手仕事・受け継ぐ・布を大切に使う\n【文章２】買う側の視点：消費者・選ぶ力・エシカル・ものさし\n共通するメッセージ：「買う・使う」行為の意味を問い直す\n違い：文章１は「過去の智恵」から、文章２は「今の選択」から論じている"
+      },
+      {
+        "type": "接続詞を「地図」として使う",
+        "body": "評論文の接続詞は、論の流れを示す「地図」です。<strong>接続詞の前後で何が変わっているかを確認する</strong>だけで、論の構造がわかります。",
+        "example": "主な接続詞と読み方：\n・しかし／だが → ここから筆者が本当に言いたいことが来る\n・だから／したがって → 前の内容からの結論が来る\n・つまり／要するに → 前の内容をわかりやすくまとめた言葉が来る\n・一方で／それに対して → 比べる話が来る"
+      }
+    ],
+    "key": "「買い物は投票だ」——これが核心です。何を買うかで、どんな世界を支持するかを選んでいる。【文章１】が「作る側の顔が見える手仕事」を通して「ものづくりの意味」を問い、【文章２】が「消費者のものさし」を通して「選ぶことの責任」を問う——二つは表と裏の関係です。\n\n「エシカルな消費をしなければならない」というのではなく、「自分がなぜこれを買うのかを一度考える」——それだけで見える世界が変わる、というのが筆者の伝えたいことです。",
+    "deep": "あなたが着ている服、飲んでいる飲み物——それを作った人たちがどんな環境でいくらもらって働いているか、考えたことはありますか？\n\n「正しい消費をしなさい」と強制することが、この本の目的ではありません。「自分の選択が世界とつながっている」という気づきを持つこと——それだけで、見える世界が少し広がります。一人の小さな選択が集まれば世界が変わる。あなたの選択も、その「一歩」になれます。"
+  },
+  {
+    "i": 7,
+    "c": "story",
+    "year": "令和4",
+    "t": "春や春",
+    "o": "森谷明子",
+    "st": "藤ヶ丘女子高校二年生の加藤東子（トーコ）は、俳句甲子園出場をめざす草笛同好会のマネージャー。出題場面（その2）は草笛の練習場面——会長の須崎茜、井野瑞穂、夏樹、北条らが登場し、瑞穂が「草笛は耳にやはらかし」という句を読む場面。出題場面（その3）は東子が瑞穂に句を作るよう頼み、「友」という言葉をめぐって二人が言葉を交わす場面。「友呼ぶ草笛」という瑞穂の句と、「友」という言葉が瑞穂にとってどんな意味を持つかが中心となる。",
+    "reason": "出題された場面は「草笛（音・感覚）と俳句（言葉・意味）」の対比が中心です。草笛の音でしか表現できなかったものを、言葉（俳句）に変えようとする瑞穂の変化を追う読み方が問われました。\n\n「友」という言葉が瑞穂にとってどんな重みを持つかを、会話の流れと人物の状況から読み取る力——これが出題の核心です。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　「草笛は耳にやはらかし」という句を東子がどう受け取ったかを読む",
+        "a": "東子が瑞穂の「草笛は耳にやはらかし」という句を読んで感じたことを、本文の言葉をもとに答える問題です。「東子の感じ方がなぜそうだったのか」を、東子という人物の視点から読み取れるかが問われます。",
+        "why": "「この人はなぜそう感じたのか」を問う問いは、その人物の視点・感覚を読み取る力を試しています。「東子がなぜこう感じたか」を答えるには、東子という人物が俳句をどう見ているかを本文から読み取ることが必要です。"
+      },
+      {
+        "q": "この問題で問われていること②　「友」という言葉が瑞穂にとってどんな意味を持つかを読む",
+        "a": "「友呼ぶ草笛」という句を作った瑞穂にとって、「友」という言葉が単なる「友達」以上のどんな意味を持っていたかを、東子との会話の流れから読み取れるかが問われます。",
+        "why": "一つの言葉がある人物にとってどんな重みを持つかを読む問題は、小説読解の核心です。辞書の意味ではなく「この人にとってのこの言葉の意味」を、会話の文脈から読み取る力が問われています。"
+      },
+      {
+        "q": "この問題で問われていること③　草笛と言葉・東子と瑞穂の対比を読む",
+        "a": "草笛（音・感覚）と俳句（言葉・意味）という対比、草笛が得意な瑞穂と言葉（俳句）で向き合おうとする東子の対比が、場面全体にどんな意味を生み出しているかを読み取れるかが問われます。",
+        "why": "対比を意識して読むことで、それぞれの登場人物が何を大切にしているかが見えてきます。「〇〇と△△を対比することで、何が際立っているか」を整理する力が試されています。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "「言葉の意味を問う」問題の答え方",
+        "body": "「〇〇という言葉が、この場面でどんな意味を持っているか答えなさい」という問題は、<strong>①辞書の意味を確認 ②その人物にとっての意味を本文から探す ③場面の状況と結びつける</strong>という三ステップで答えます。",
+        "example": "「友」という言葉の場合：\n①辞書の意味：友達・仲間\n②瑞穂にとっての意味：本文の会話の流れから「瑞穂が友という言葉に何を込めたか」を探す\n③場面の状況：草笛でしか気持ちを伝えられなかった瑞穂が、言葉という新しい道具で向き合おうとしている"
+      },
+      {
+        "type": "「対比（二つを比べる書き方）」を見つける",
+        "body": "小説の中で「二つのものが対比されているとき」、それは作者が一番伝えたいことを際立たせるためです。<strong>「〇〇と△△が対比されている。〇〇は〜で、△△は〜だ」</strong>という形で整理しましょう。",
+        "example": "「春や春」の対比：\n・草笛（音・感覚・本能的） ↔ 俳句（言葉・意味・考える）\n・瑞穂（感覚で表現する人） ↔ 東子（言葉で表現しようとする人）\nこの対比を整理できると、場面全体の意味が見えてきます。"
+      }
+    ],
+    "key": "「草笛は音で伝える。俳句は言葉で伝える。でも伝えたいものは同じかもしれない」——これが核心です。草笛が得意な瑞穂が、東子から「あなたに句を作ってほしい」と頼まれて初めて言葉という道具と向き合う。「友呼ぶ草笛」という句は、感覚が言葉になろうとしている瞬間を表しています。\n\n「友」という一言の重さを読み取ること——それがこの場面の読解の核心です。",
+    "deep": "「うまく言葉にできない」と感じることはありませんか？感じているのに、言葉が出てこない——それは瑞穂と同じです。草笛を吹くように、感覚のままで何かを表現しようとしているとき、それはすでに「表現」の始まりです。\n\n「友」という言葉一つの重さを知っている人は、言葉を大切に使える人です。言葉には辞書の意味以上のものが詰まっている——その感覚を育てることが、国語力の本質です。"
+  },
+  {
+    "i": 8,
+    "c": "essay",
+    "year": "令和4",
+    "t": "はずれ者が進化をつくる",
+    "o": "稲垣栄洋",
+    "st": "出題された場面は二つの文章の組み合わせ。【文章１】「平均値」——自然界は平均値に近い「普通の個体」ばかりではなく、平均値から遠く離れた「はずれ者」がバラバラに存在する。「多様性」とはこのことで、環境が変わったとき「はずれ者」が種を救う。【文章２】ネアンデルタール人とホモ・サピエンスの比較——ネアンデルタール人はホモ・サピエンスより体も大きく知能も優れ、集団生活もできたのになぜ絶滅したのか。白い蛾・黒い蛾（オシモフリエダシャク）の工業暗化の事例も登場する。",
+    "reason": "「平均がいちばん良い、普通がいちばん安全」——そう思っていませんか？この問題は、その「当たり前」をひっくり返します。自然界では「普通じゃない個体（はずれ者）」が、環境が変わったときに種を救う——これが生物の進化の事実です。\n\n二つの文章を合わせて読む形式で、【文章１】の「平均値・多様性」という考え方と、【文章２】のネアンデルタール人の話がどうつながるかを整理する力が問われました。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　「平均値」と「多様性」のつながりを読む",
+        "a": "【文章１】で「自然界の平均値から遠い個体（はずれ者）」が存在することの意味——それが「多様性」であり、環境が変わったときに種を救う——という筆者の主張の流れを整理できるかが問われます。「平均値に近い＝優れている」ではない、という考え方を読み取れるかが鍵です。",
+        "why": "評論文の中心にある「当たり前をひっくり返す」という論の進め方に気づけるかどうかが大切です。「平均値が大切」という一般的な考えを否定して、「はずれ者に意味がある」という筆者の主張がどこで出てくるかを探しましょう。"
+      },
+      {
+        "q": "この問題で問われていること②　オシモフリエダシャク（白い蛾・黒い蛾）の話の意味を読む",
+        "a": "工場の煙突で白い蛾は目立つため鳥に食べられ、黒い蛾が生き残った——この具体的な話が、「はずれ者が進化をつくる」という筆者の言いたいことのどこを証明しているかを説明できるかが問われます。",
+        "why": "評論文に具体的な話（事例）が出てきたら「これは何のために書かれているか」を問う習慣をつけましょう。事例は必ず「言いたいことの証拠」として書かれています。「この話＝この主張の証明」という対応を読む力が試されています。"
+      },
+      {
+        "q": "この問題で問われていること③　ネアンデルタール人はなぜ絶滅したかを読む",
+        "a": "【文章２】でネアンデルタール人がホモ・サピエンスより優れた面を持っていたのに絶滅した理由——「体も大きく知能も優れ集団生活もできたが、足りない能力を互いに補い合いながら暮らす力（多様性）がなかった」——という流れを整理できるかが問われます。",
+        "why": "「なぜ絶滅したのか」という問いは、「何を持っていたか」ではなく「何が足りなかったか」を読む問いです。【文章１】の「多様性」という考え方と、【文章２】のネアンデルタール人の話を結びつけて読む力が問われています。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "「二つの文章を結びつける」読み方",
+        "body": "【文章１】と【文章２】が出たとき、<strong>「文章１のキーワード（平均値・多様性）が、文章２のどの話と対応しているか」を線で結ぶように読む</strong>と整理しやすくなります。",
+        "example": "対応の整理：\n文章１「平均値から遠い個体（はずれ者）が種を救う」\n　　　↕ 対応\n文章２「体が小さく力も弱いホモ・サピエンスが生き残り、優れたネアンデルタール人が絶滅した」\n共通するメッセージ：「優れた平均」ではなく「バラバラな多様性」が環境変化に強い"
+      },
+      {
+        "type": "事例（具体的な話）の読み方",
+        "body": "オシモフリエダシャクのような具体的な話が出てきたら、<strong>「この話は、文章のどの主張の証拠として書かれているか」を確認する</strong>習慣をつけましょう。",
+        "example": "オシモフリエダシャクの整理：\n事実：白い蛾は工場の煙突（黒い背景）で目立ち、鳥に食べられた。黒い蛾は目立たず生き残った。\n証明していること：「はずれ者（黒い蛾）が、環境が変わったとき生き残る」という主張の証拠\n→答えるときは「〇〇という事例は、△△という主張を証明している」という形で書く"
+      }
+    ],
+    "key": "「自然界に正解（平均値）はない。だからバラバラな多様性が必要だ」——これが核心です。ネアンデルタール人は優れていたが、足りない能力を互いに補い合う多様性がなかった。ホモ・サピエンスは体も小さく力も弱かったが、足りないところを互いに補い合いながら暮らす力があった——だから生き残った。\n\n「優れていること」と「生き残ること」は別の話です。環境が変わったとき、「平均的に優れた一つのタイプ」より「バラバラな多様性」の方が強い——これが二つの文章を貫くメッセージです。",
+    "deep": "「自分は普通じゃない」「みんなと違う」と感じることがありますか？この文章が言っているのは、その「違い」こそが強さの源かもしれないということです。\n\nネアンデルタール人が絶滅し、ホモ・サピエンスが生き残ったのは「優れていたから」ではなく「バラバラだったから」——この事実は、「普通じゃない自分」を否定するのではなく、大切にする理由になるはずです。"
+  },
+  {
+    "i": 9,
+    "c": "story",
+    "year": "令和3",
+    "t": "サマーキャンプへようこそ",
+    "o": "重松清",
+    "st": "サマーキャンプを舞台にした、父（パパ）と息子（圭太）の物語。キャンプ初日の夜、テントの中と、サマーキャンプのイベントでの場面が描かれる。パパは不器用ながら息子に関わろうとしているが、息子は戸惑う。出題された場面は【文章1】テントの中での夜の会話と【文章2】キャンプのイベント（サマーキャンプのスタッフ・リッキーさん・ジョーさんらが登場する場面）の二つ。父と息子のすれ違いと、そこに流れる愛情が描かれる。",
+    "reason": "出題された二つの場面を通して「父と息子の間にあるすれ違い」が描かれています。パパは息子のためにと思って行動しているが、息子には届かない——この「意図と受け取られ方のズレ」を読む力が問われました。\n\n「父親の気持ち」と「息子の気持ち」それぞれの立場から、同じ場面をどう感じているかを区別して読む力——これは入試で最もよく問われる「登場人物の心情理解」の応用です。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　パパの行動の意図と息子の受け取り方のズレを読む",
+        "a": "パパが息子のためにとった行動・言った言葉が、息子にはどう受け取られているかを比べて読む問題です。「パパの意図」と「息子の受け取り方」がどう食い違っているかを、本文の言葉をもとに整理できるかが問われます。",
+        "why": "「なぜこの人はこういう行動をとるのか」を問う問いは、その人物の立場・気持ち・状況を合わせて読む力を試しています。入試では「AはなぜこういったのかをBの立場から説明しなさい」という形でよく出ます。"
+      },
+      {
+        "q": "この問題で問われていること②　父と息子それぞれの「気持ちの動き」を追う",
+        "a": "テントの場面とキャンプのイベント場面で、パパと圭太それぞれがどんな気持ちの変化をたどるかを、具体的な言動と結びつけて答える問題です。",
+        "why": "小説では「最初の気持ち→きっかけ→気持ちの変化」を追う読み方が基本です。特に「どの場面で気持ちが変わったか」を特定できるかどうかが、読解の深さを分けます。"
+      },
+      {
+        "q": "この問題で問われていること③　「父と息子の関係」に込められたテーマを読む",
+        "a": "この物語が「父と息子の間にある不器用なやり取り」を通して、何を伝えようとしているかを読み取る問題です。二つの場面を合わせて読んだとき、何が変わったか・何が伝わったかを整理できるかが問われます。",
+        "why": "「この物語は何を伝えたいか」という問いは、個々の場面だけでなく物語全体のテーマを読む力を試しています。変化の前と後を比べ、「この物語で何が起きたか」を一言でまとめる力が必要です。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "「気持ちの二層構造」を読む",
+        "body": "登場人物の気持ちを「表の気持ち」と「その奥にある気持ち」に分けて読む習慣をつけましょう。<strong>「表面：〜という気持ち　奥にあるもの：実は〜という気持ち」</strong>という形で整理します。",
+        "example": "パパの場合：\n表の気持ち：うまくできない・戸惑い\n奥にある気持ち：息子を大切に思う深い愛情・うまく向き合いたいのにできない\n→答え方：「表面上はうまくできない様子だが、その奥には息子への深い愛情がある」"
+      },
+      {
+        "type": "「なぜ？」を問う問題の答え方",
+        "body": "「〜なのはなぜか」という問いには、<strong>必ず本文の中から理由を探して書く</strong>ことが必要です。自分の想像で書くと、どんなに正しそうでも点になりません。",
+        "example": "ダメな答え：「気になったから」\n良い答え：「本文の〇〇という部分から、〜ということがわかるため」"
+      }
+    ],
+    "key": "「不器用な愛情」——これが核心です。パパは息子のためにと思って動いているが、息子にはうまく伝わらない。愛情が強いほど、言葉や行動がすれ違うことがある——この逆説が、この物語に流れています。\n\n二つの場面（テントの夜・キャンプのイベント）を通して、パパと圭太の関係に何かが少し変わる瞬間がある。その「変化の瞬間」を特定できるかどうかが、読解の深さを決めます。",
+    "deep": "親と話すのが難しいと感じることはありますか？「困惑している」ということは「うまくやりたいと思っている」ということです。「困惑」と「拒絶」は全然違います。うまくいかないことが「嫌いだから」とは限らない——この読み方は、家族や友達との関係全般に使える視点です。"
+  },
+  {
+    "i": 10,
+    "c": "essay",
+    "year": "令和3",
+    "t": "人間の本性",
+    "o": "丹羽宇一郎（＋兼好法師「徒然草」狛犬の段）",
+    "st": "三つの資料を組み合わせた問題。【資料１】北海道大学調和系工学研究室が開発したAIが作った俳句と、俳人・大塚凱（おおつかがい）による選評。「なかなかの母の声澄む露の薫」「逢引のこえのくらがりさくらんぼ」という俳句を、AIが作ったことへの評価が示される。【資料２】「AIがこのまま進化すると人間の知性を超える日がくる」という現代の評論（丹羽宇一郎「人間の本性」より）——AIの「疑う」力のなさ、「量」の計算はできても「質」の判断はできないという議論。【資料３】兼好法師「徒然草」——聖海上人が「普通と違う向きの狛犬」に深い意味を見出したが、実はただの置き間違いだったというエピソード。三つの資料をつなげて「人間とAIの違い」「疑う力とは何か」を考えさせる出題。",
+    "reason": "「AIが作った俳句」——自分がAIの俳句を読んで感動したとしたら、それは何を意味するのか。【資料１】で実際にAIの俳句を読んで評価するところから始まり、【資料２】でAIの限界（疑えない・質を判断できない）を論じ、【資料３】で700年前の「思い込み」のエピソードと重ねる——この三段構えが、沖縄県入試で最もレベルの高い問いを作り出しました。\n\n「三つの資料を関連づけて読む」という難易度の高い形式でしたが、「AIは疑えない＝人間の特質は疑えること」という核心は一本の線でつながっています。",
+    "test": [
+      {
+        "q": "この問題で問われていること①　AIの俳句への選評の内容を正確に読む",
+        "a": "【資料１】の俳句選評で、「逢引のこえのくらがりさくらんぼ」という俳句についての選評Aと選評Bがどう評価しているかを読み取り、評価が分かれた理由を説明できるかが問われます。",
+        "why": "「評価が分かれている」ということは、どちらの評価も根拠があるということです。「なぜ評価Aはこう言い、評価Bはこう言うのか」——それぞれの根拠を本文から探す力が問われています。"
+      },
+      {
+        "q": "この問題で問われていること②　AIの「量」はできるが「質」はできないという主張を読む",
+        "a": "【資料２】で、AIは「量」（大量のデータ処理・パターン化）はできるが「質」（意味の創造・疑うこと）はできないという筆者の主張の流れを整理できるかが問われます。「なぜAIは疑えないのか」を本文の言葉をもとに説明できるかが鍵です。",
+        "why": "「AはできるがBはできない」という対比の読み方は評論文の基本です。「量（できること）」と「質（できないこと）」を整理するだけで、この資料の言いたいことの大半がつかめます。"
+      },
+      {
+        "q": "この問題で問われていること③　徒然草の狛犬と現代の話をつなげて読む",
+        "a": "【資料３】の聖海上人の「ただの置き間違いに深い意味を見出した」エピソードが、【資料２】の「人間はAIと違い疑うことができる」というテーマとどうつながっているかを説明できるかが問われます。",
+        "why": "古文の問題は「全部訳せるか」より「何が起きたか＋それがなぜ現代の話と関係するか」が大切です。「聖海上人の失敗＝思い込みで疑わなかった」という読み方から、「疑う力の大切さ」という現代的なテーマへとつなげる力が問われています。"
+      }
+    ],
+    "tactics": [
+      {
+        "type": "「三つの資料」をつなげて読む方法",
+        "body": "三つ（以上）の資料が出たとき、<strong>まず各資料の「言いたいこと（テーマ）」を一言でメモしてから、共通するキーワードを探す</strong>と整理しやすくなります。",
+        "example": "令和3年度の整理：\n資料１：AIの俳句→人間が評価できる（でも評価が分かれる）\n資料２：AIは量はできるが質（疑う力）はない\n資料３：人間も「疑わなかった」失敗をする（聖海上人）\n共通キーワード：「疑う力」「質の判断」「人間らしさとは何か」"
+      },
+      {
+        "type": "古文「誰が・何をした・なぜ・実際は」で整理する",
+        "body": "古文は難しく見えますが、<strong>「誰が・何をした・なぜ・実際はどうだったか」の四点を整理する</strong>だけで内容の大半がつかめます。全部訳そうとしなくていいです。",
+        "example": "狛犬の段の整理：\n誰が：聖海上人（えらいお坊さん＝権威ある人物）\n何をした：普通と向きが違う狛犬に感動し「これには深い意味がある」と言った\nなぜ：普通と違う向きが「由緒ある証拠」に見えたから\n実際は：ただの置き間違いだった\n→現代とのつながり：疑わなかった（＝AIと同じ失敗）→人間も「疑う力」を意識して使わないといけない"
+      }
+    ],
+    "key": "「AIは疑えない。だから人間にとって『疑う力』が一番大切だ」——これが三つの資料を貫く核心です。AIは大量のデータからパターンを学び、俳句も作れる。でも「これは本当にそうか」と疑うことはできない。聖海上人は疑わなかったから失敗した。人間も疑わなければAIと変わらない——この連鎖を読み取ることが求められています。\n\n古典と現代文の組み合わせ問題のコツは「形は違っても、言っていることの本質は同じ」と気づくことです。",
+    "deep": "AIが作った俳句に感動することはおかしいですか？感動した自分を疑いましたか？\n\n「疑う力」は批判することではありません。「本当にそうかな」と一度立ち止まれる力です。SNSで流れてくる情報、友達が言った言葉、テレビのニュース——「これは本当か、根拠は何か」と問える人が、自分の頭で考えられる人です。700年前の兼好法師も、現代の丹羽宇一郎も、同じことを心配していた——それが「人間の本性」への問いです。"
+  }
+]
+</script>
+
+<script>
+var S=JSON.parse(document.getElementById("D").textContent);
+var CN={story:"小説・物語",essay:"論説・説明文"};
+var cy="all";
+var currentTab="all";
+
+function init(){
+  setTimeout(function(){
+    document.getElementById("sp").classList.add("h");
+    document.getElementById("hd").style.display="";
+    document.getElementById("ml").style.display="";
+  },2800);
+  renderYF();renderCT();renderList();
+}
+
+function getYears(){
+  var ys={};
+  for(var i=0;i<S.length;i++) ys[S[i].year]=true;
+  return Object.keys(ys).sort().reverse();
+}
+
+function renderYF(){
+  var e=document.getElementById("yf");
+  if(!e) return;
+  e.style.display=(currentTab==="compass")?"none":"";
+  var years=getYears();
+  var h="<button class='yb"+(cy==="all"?" a":"")+"' onclick='setY(\"all\")'>すべての年度</button>";
+  for(var i=0;i<years.length;i++){
+    h+="<button class='yb"+(cy===years[i]?" a":"")+"' onclick='setY(\""+years[i]+"\")'>"+years[i]+"</button>";
+  }
+  e.innerHTML=h;
+}
+
+function filtered(){
+  var siEl=document.getElementById("si");
+  var q=siEl?siEl.value.toLowerCase():"";
+  var r=[];
+  for(var i=0;i<S.length;i++){
+    var s=S[i];
+    if(cy!=="all"&&s.year!==cy) continue;
+    if(q&&s.t.toLowerCase().indexOf(q)<0&&(s.o||"").toLowerCase().indexOf(q)<0) continue;
+    r.push(s);
+  }
+  return r;
+}
+
+function renderCT(){
+  var e=document.getElementById("ct");
+  if(!e) return;
+  var items=filtered(),ns=0,ne=0;
+  for(var i=0;i<items.length;i++){if(items[i].c==="story")ns++;else ne++;}
+  var h="";
+  h+="<button class='ctb"+(currentTab==="all"?" a":"")+"' onclick='setC(\"all\")'>すべて <span style='opacity:.5;font-size:.55rem'>"+items.length+"</span></button>";
+  h+="<button class='ctb"+(currentTab==="story"?" a":"")+"' data-c='story' onclick='setC(\"story\")'>小説・物語 <span style='opacity:.5;font-size:.55rem'>"+ns+"</span></button>";
+  h+="<button class='ctb"+(currentTab==="essay"?" a":"")+"' onclick='setC(\"essay\")'>論説・説明文 <span style='opacity:.5;font-size:.55rem'>"+ne+"</span></button>";
+  h+="<button class='ctb"+(currentTab==="compass"?" a":"")+"' data-c='compass' onclick='setC(\"compass\")'>問題の解き方</button>";
+  h+="<button class='ctb"+(currentTab==="theme"?" a":"")+"' data-c='theme' onclick='setC(\"theme\")'>現代のテーマ</button>";
+  e.innerHTML=h;
+}
+
+function renderList(){
+  var sgEl=document.getElementById("sg");
+  var compassEl=document.getElementById("compass-page");
+  var themeEl=document.getElementById("theme-page");
+  var siEl=document.getElementById("si");
+
+  if(currentTab==="compass"){
+    if(sgEl) sgEl.innerHTML="";
+    if(compassEl) compassEl.className="compass-page a";
+    if(themeEl) themeEl.className="theme-page";
+    if(siEl) siEl.style.display="none";
+    window.scrollTo(0,0);
+    return;
+  }
+
+  if(currentTab==="theme"){
+    if(sgEl) sgEl.innerHTML="";
+    if(compassEl) compassEl.className="compass-page";
+    if(themeEl) themeEl.className="theme-page a";
+    if(siEl) siEl.style.display="none";
+    window.scrollTo(0,0);
+    return;
+  }
+
+  if(compassEl) compassEl.className="compass-page";
+  if(themeEl) themeEl.className="theme-page";
+  if(siEl) siEl.style.display="";
+  if(!sgEl) return;
+
+  var items=filtered();
+  if(currentTab!=="all"){
+    var f=[];
+    for(var i=0;i<items.length;i++) if(items[i].c===currentTab) f.push(items[i]);
+    items=f;
+  }
+  var h="";
+  for(var i=0;i<items.length;i++){
+    var s=items[i];
+    var first=s.reason.split("。")[0]+"。";
+    h+="<div class='sc' data-c='"+s.c+"' onclick='showItem("+s.i+")'>";
+    h+="<div class='sct-meta'><span class='scy'>"+s.year+"年度</span><span class='sco'>"+CN[s.c]+"</span></div>";
+    h+="<div class='scn'>"+s.t+"</div>";
+    if(s.o) h+="<div class='sch'>"+s.o+"</div>";
+    h+="<div class='sc-reason'><strong>出題の意図：</strong>"+first+"</div>";
+    h+="</div>";
+  }
+  sgEl.innerHTML=h||"<div style='text-align:center;color:#bbb;padding:3rem;font-size:.85rem'>該当する問題がありません</div>";
+}
+
+function setC(c){currentTab=c;cy="all";renderCT();renderList();}
+function setY(y){cy=y;renderCT();renderList();}
+function filt(){cy="all";currentTab="all";renderCT();renderList();}
+
+function fmt(t){
+  if(!t)return"";
+  var ps=t.split("\n\n"),h="";
+  for(var i=0;i<ps.length;i++)h+="<p>"+ps[i]+"</p>";
+  return h;
+}
+
+var _scrollY=0;
+function showItem(id){
+  _scrollY=window.scrollY;
+  var s=null;
+  for(var i=0;i<S.length;i++)if(S[i].i===id){s=S[i];break;}
+  if(!s)return;
+  var mlEl=document.getElementById("ml");
+  if(mlEl) mlEl.style.display="none";
+  var rv=document.getElementById("rv");
+  rv.className="rv a";
+  rv.setAttribute("data-c",s.c);
+  var boxClass=s.c==="story"?"story-style":"essay-style";
+
+  var testHtml="";
+  for(var j=0;j<s.test.length;j++){
+    testHtml+="<div class='test-item'>";
+    testHtml+="<div class='test-item-q'>"+s.test[j].q+"</div>";
+    testHtml+="<div class='test-item-a'>"+s.test[j].a+"</div>";
+    if(s.test[j].why){
+      testHtml+="<div class='test-item-why'><strong>なぜこれが問われるのか：</strong>"+s.test[j].why+"</div>";
+    }
+    testHtml+="</div>";
+  }
+
+  var tacticsHtml="";
+  if(s.tactics&&s.tactics.length){
+    tacticsHtml="<div class='tactics-label'>この問題タイプの攻略法</div><div class='tactics-box'>";
+    for(var k=0;k<s.tactics.length;k++){
+      var t=s.tactics[k];
+      tacticsHtml+="<div class='tactics-item'>";
+      tacticsHtml+="<div class='tactics-type'>▶ "+t.type+"</div>";
+      tacticsHtml+="<div class='tactics-body'>"+t.body+"</div>";
+      if(t.example) tacticsHtml+="<div class='tactics-example'>"+t.example.replace(/\n/g,"<br>")+"</div>";
+      tacticsHtml+="</div>";
+    }
+    tacticsHtml+="</div>";
+  }
+
+  var allIds=[];for(var n=0;n<S.length;n++)allIds.push(S[n].i);
+  var ci=allIds.indexOf(id);
+
+  rv.innerHTML=""
+  +"<button class='bb' onclick='goBack()'>← 一覧に戻る</button>"
+  +"<div class='rh'>"
+  +"<div class='rh-year'>沖縄県立高校入試 "+s.year+"年度 国語</div>"
+  +"<h1>"+s.t+"</h1>"
+  +(s.o?"<div class='rau'>"+s.o+"</div>":"")
+  +"<div class='rh-meta'><span class='rh-cat "+s.c+"'>"+CN[s.c]+"</span></div>"
+  +"</div>"
+  +"<div class='stx "+s.c+"'>"+fmt(s.st)+"</div>"
+  +"<div class='sec sec-why'><div class='sec-label'>この問題が出題された意図</div><div class='sec-body'>"+fmt(s.reason)+"</div></div>"
+  +"<div class='test-box-label "+(s.c==="story"?"story-style-label":"essay-style-label")+"'>この問題が測ろうとしていること</div>"
+  +"<div class='test-box "+boxClass+"'>"+testHtml+"</div>"
+  +tacticsHtml
+  +"<div class='sec sec-key'><div class='sec-label'>読解の核心</div><div class='sec-body'>"+fmt(s.key)+"</div></div>"
+  +"<div class='sec sec-deep'><div class='sec-label sec-deep-label'>中３のあなたへ ── この問題が伝えたかったこと</div><div class='di'>"+fmt(s.deep)+"</div></div>"
+  +"<div class='snv'>"
+  +"<button "+(ci<=0?"disabled":"")+" onclick='showItem("+allIds[ci-1]+")'>← 前の問題</button>"
+  +"<button "+(ci>=allIds.length-1?"disabled":"")+" onclick='showItem("+allIds[ci+1]+")'>次の問題 →</button>"
+  +"</div>";
+
+  window.scrollTo(0,0);
+}
+
+function goBack(){
+  var rv=document.getElementById("rv");
+  if(rv) rv.className="rv";
+  var mlEl=document.getElementById("ml");
+  if(mlEl) mlEl.style.display="";
+  renderCT();
+  renderList();
+  requestAnimationFrame(function(){window.scrollTo(0,_scrollY);});
+}
+
+window.addEventListener("load",init);
+</script>
+</body>
+</html>
